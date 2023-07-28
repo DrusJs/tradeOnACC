@@ -1,0 +1,80 @@
+@font-face {
+    font-family: "Play";
+    src: url("../fonts/Play-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Play";
+    src: url("../fonts/Play-Bold.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Monument Extended";
+    src: url("../fonts/MonumentExtended-Regular.otf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Monument Extended";
+    src: url("../fonts/MonumentExtended-Ultrabold.otf");
+    font-weight: 800;
+    }
+
+@font-face {
+    font-family: "Russo One";
+    src: url("../fonts/RussoOne-Regular.ttf");
+    font-weight: 400;
+}
+
+:root {
+    --first-font: "Play", sans-serif;
+    --second-font: "Monument Extended", sans-serif;
+    --third-font: "Russo One", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+a,
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    font-family: var(--first-font);
+    background-color: #030D23;
+    color: #fff;
+}
+body.noscroll {
+	overflow: hidden;
+}
+
+.header {
+
+}
+
+.main {
+    width: 100%;
+    flex: 1 1 auto;
+}
+
+.footer {
+
+}
