@@ -210,7 +210,7 @@ body.noscroll {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../images/popular-block.svg);
+    background-image: url(../images/popular-bg.png);
     width: 247px;
     height: 57px;
     position: absolute;
@@ -296,14 +296,14 @@ body.noscroll {
 .cards-filter {
     height: 61px;
     width: 617px;
-    background-image: url(../images/card-nav.svg);
+    background-image: url(../images/filtercard.png);
     display: flex;
     padding-left: 22px;
 }
 .cards-section {
     width: 1736px;
     height: 275px;
-    background-image: url(../images/card-section.svg);
+    background-image: url(../images/card-section.png);
     display: flex;
     align-items: center;
     justify-content: center;
