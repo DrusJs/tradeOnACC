@@ -1022,10 +1022,9 @@ var pJS = function(tag_id, params){
   pJS.fn.modes.grabParticle = function(p){
 
     if(pJS.interactivity.events.onhover.enable && pJS.interactivity.status == 'mousemove'){
-
       var dx_mouse = p.x - pJS.interactivity.mouse.pos_x,
           dy_mouse = p.y - pJS.interactivity.mouse.pos_y,
-          dist_mouse = Math.sqrt(dx_mouse*dx_mouse + dy_mouse*dy_mouse);
+          dist_mouse = Math.sqrt(dx_mouse*dx_mouse + dy_mouse*dy_mouse);          
 
       /* draw a line between the cursor and the particle if the distance between them is under the config distance */
       if(dist_mouse <= pJS.interactivity.modes.grab.distance){
@@ -1085,7 +1084,7 @@ var pJS = function(tag_id, params){
         }
 
         pJS.interactivity.mouse.pos_x = pos_x;
-        pJS.interactivity.mouse.pos_y = pos_y;
+        pJS.interactivity.mouse.pos_y = pos_y+document.documentElement.scrollTop;
 
         if(pJS.tmp.retina){
           pJS.interactivity.mouse.pos_x *= pJS.canvas.pxratio;
