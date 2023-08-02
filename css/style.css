@@ -107,8 +107,39 @@ body.noscroll {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 15px;
     margin: 0 110px;
 }
+
+.burger-menu {
+    display: none;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 25px;
+    height: 16px;
+    cursor: pointer;
+    transition: 260ms ease-in;
+}
+
+.burger-menu .bar {
+    width: 25px;
+    height: 2px;
+    background-color: #FFFFFF;
+    transition: 150ms ease-in;
+}
+.burger-menu.active .bar:nth-child(2) {
+    transition: 260ms ease-in;
+}
+.burger-menu.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.burger-menu.active .bar:nth-child(2) {
+    height: 0px;
+}
+.burger-menu.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-42deg);
+}
+
 .logo {
     font-family: var(--font-monument);
     font-size: 20px;
@@ -121,7 +152,7 @@ body.noscroll {
     justify-content: space-between;
     align-items: center;
     width: 520px;
-
+    gap: 15px;
 }
 .nav__list {
     font-family: var(--font-play-bold);
@@ -521,11 +552,48 @@ body.noscroll {
 /*media*/
 @media screen and (max-width: 1550px) {
     .instructions {
-        transform: scale(0.8);
+        transform: scale(0.8);        
+        margin: 0px 0 80px 0;
     }
+    
 }
 @media screen and (max-width: 1250px) {
+    .header {        
+        margin: 0 60px;
+    }
     .instructions {
-        transform: scale(0.65);
+        transform: scale(0.65);        
+        margin: -40px 0 0px 0;
+    }
+    .footer__border-gradient {
+        padding: 35px 50px 0 50px;
+    }
+}
+@media screen and (max-width: 980px) {
+    .header {        
+        margin: 0 20px;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    .navigation, .logo {
+        display: none;
+    }
+    .burger-menu {
+        display: flex;
+    }
+    .footer {
+        height: 650px;
+    }
+    .footer__border-gradient {
+        flex-direction: column;
+        align-items: center;
+        padding: 35px 5px 35px 5px;
+        height: 650px;
+        gap: 70px;
+    }
+    .footer-nav {
+        flex-direction: column;
+        gap: 50px;
     }
 }
