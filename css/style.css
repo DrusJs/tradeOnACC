@@ -440,6 +440,18 @@ body.noscroll {
     min-height: 665px;
     padding: 68px 0 34px 0;
     transition: 200ms ease-in;
+    animation: instructionAnimate 500ms ease-in;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.instructions__block.animone {
+    animation-delay: 200ms;
+}
+.instructions__block.animtwo {
+    animation-delay: 500ms;
+}
+.instructions__block.animthree {
+        animation-delay: 800ms;
 }
 .instructions__block.purple-bg {
     background-image: url(../images/purpleInstruction.svg);
@@ -492,6 +504,18 @@ body.noscroll {
 }
 .instructions__button:hover {
 
+}
+
+@keyframes instructionAnimate {
+    from {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+  
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
 }
 
 /*media*/
