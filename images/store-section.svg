@@ -1,12 +1,12 @@
-<svg width="1922" height="197" viewBox="0 0 1922 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1922" height="546" viewBox="0 0 1922 546" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_1576_120)">
-<path d="M1013 36C776.62 36 268.5 63 -2.5 86L0 475.5C276.77 450.93 706.01 428.5 1004.5 428.5C1302.99 428.5 1644.23 447.93 1919.5 472L1921.5 80.5C1710 61 1249.38 36 1013 36Z" fill="#030D23"/>
+<path d="M1013 18C776.62 18 268.5 45 -2.5 68L0 457.5C282.5 454 692.5 454 995 457.5C1293.47 460.953 1634.5 454 1919.5 454L1921.5 62.5C1710 43 1249.38 18 1013 18Z" fill="#02050B"/>
 <g filter="url(#filter0_d_1576_120)">
-<path d="M1921.5 79C1645.73 54.4255 1305.49 36 1007 36C708.505 36 275.773 58.9254 0 83.5" stroke="url(#paint0_linear_1576_120)" stroke-width="3"/>
+<path d="M1921.5 63C1645.73 38.4255 1305.49 20 1007 20C708.505 20 275.773 42.9254 0 67.5" stroke="url(#paint0_linear_1576_120)" stroke-width="3"/>
 </g>
 </g>
 <defs>
-<filter id="filter0_d_1576_120" x="-15.1332" y="19.5" width="1951.77" height="80.4941" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_1576_120" x="-15.1332" y="3.5" width="1951.77" height="80.4941" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset/>
@@ -16,12 +16,12 @@
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1576_120"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1576_120" result="shape"/>
 </filter>
-<linearGradient id="paint0_linear_1576_120" x1="0" y1="59.5569" x2="1921.5" y2="59.5571" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_1576_120" x1="0" y1="43.5569" x2="1921.5" y2="43.5571" gradientUnits="userSpaceOnUse">
 <stop stop-color="#92FE9D"/>
 <stop offset="1" stop-color="#00C9FF"/>
 </linearGradient>
 <clipPath id="clip0_1576_120">
-<rect width="1922" height="197" fill="white"/>
+<rect width="1922" height="546" fill="white"/>
 </clipPath>
 </defs>
 </svg>
