@@ -379,7 +379,7 @@ body.noscroll {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    margin-top: -35px;
+    margin: -35px 0 40px 0;
     z-index: 1;
 }
 .cards-filter {
@@ -487,7 +487,7 @@ body.noscroll {
     gap: 5px;
     display: flex;
     justify-content: space-between;
-    margin: 100px 0 160px 0;
+    margin: 100px 0 200px 0;
 }
 .instructions__block:hover {
     transform: scale(1.05);
