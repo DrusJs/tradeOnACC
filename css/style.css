@@ -101,6 +101,8 @@ body.noscroll {
     width: 100%;
     /* background-color: var(--color-background-page); */
     overflow: hidden;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 .header {
@@ -303,12 +305,20 @@ body.noscroll {
     gap: 12px;
     cursor: pointer;
     transition: 170ms ease-in;
+
 }
 .account-card:hover {
     transform: scale(1.06);
 }
+.account-card.non-skew:hover {
+    transform: scale(1.06)  var(--skew-block-back);
+}
 .account-card.small-gap {
     gap: 1px;
+}
+.account-card.test-bg {
+    background-image: url(../images/greencard.svg);
+    filter: drop-shadow(0px 0px 6px #01C9FF);
 }
 .account-card.green-bg {
     background-image: url(../images/greencard.png);
@@ -389,15 +399,30 @@ body.noscroll {
     display: flex;
     padding-left: 22px;
 }
+.cards-section-bg {
+    padding: 3px;
+    background-image: var(--linear-gradient-main);
+    transform: var(--skew-block);
+    position: relative;
+    width: 94%;
+}
+.cards-section-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -0.5px;
+    width: calc(100% + 1px);
+    height: 101%;
+    background-image: var(--linear-gradient-blur);
+}
 .cards-section {
-    max-width: 1736px;
-    width: 100%;
-    padding: 0 100px;
+    padding: 0 25px;
     height: 275px;
-    background-image: url(../images/card-section.png);
+    background-color: var(--color-background-container);
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    overflow-x: scroll;
     gap: 12px;
 }
 .card-filter__list {
@@ -869,6 +894,7 @@ body.noscroll {
     font-size: 40px;
     color: #FFFFFF;
     margin: 18px 0 0 0;
+    text-align: center;
 }
 .store-section__block {
     width: 800px;
@@ -981,8 +1007,58 @@ body.noscroll {
     text-transform: uppercase;
     color: #03CAFD;
 }
-
-
+.pulse-animation {
+    position: relative;
+}
+/*animate pulse*/
+.pulse-animation:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg,#00C9FF 0%,rgba(0,0,0,0) 5%,rgba(0,0,0,0) 15%,rgba(0,0,0,0) 100%);
+    background-size: 600px;
+    background-position: 600px 0;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transition: 0.5s;            
+    border-radius: 5px;
+}
+.pulse-animation:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg,#00C9FF 0%,rgba(0,0,0,0) 5%,rgba(0,0,0,0) 15%,rgba(0,0,0,0) 100%);
+    background-size: 600px;
+    background-position: 600px 0;
+    background-repeat: no-repeat;
+    filter: blur(10px);
+    opacity: 1;
+    transition: 0.5s;
+}
+.pulse-animation:hover::after,
+.pulse-animation:hover::before {
+    animation: animate 2s linear;
+}
+.animate:after, .animate::before {
+    animation: animate 2s linear;
+}
+@keyframes animate
+{
+    0%
+    {
+        background-position: -20px 0;
+    }
+    100%
+    {
+        background-position: 600px 0;
+    }
+}
 /*media*/
 @media screen and (max-width: 1550px) {
     .instructions {
