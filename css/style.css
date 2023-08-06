@@ -416,7 +416,7 @@ body.noscroll {
     background-image: var(--linear-gradient-blur);
 }
 .cards-section {
-    padding: 0 25px;
+    padding: 0 50px;
     height: 275px;
     background-color: var(--color-background-container);
     display: flex;
