@@ -1,7 +1,7 @@
 document.getElementById("burger-button").addEventListener("click", (el)=>{
     el.currentTarget.classList.toggle("active");
 });
-
+// document.getElementById("particles-js").style.height = document.body.scrollHeight+"px";
 setTimeout(()=>{
     try {
         document.querySelector(".animone").classList.remove("animone");    
