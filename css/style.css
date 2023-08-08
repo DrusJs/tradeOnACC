@@ -96,9 +96,9 @@ body.noscroll {
 /* ---- particles.js container ---- */
 #particles-js{
     width: 100%;
-    height: 2500px;
+    height: 1000px;
     background-color: var(--color-background-page);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
