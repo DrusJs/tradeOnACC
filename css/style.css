@@ -1337,9 +1337,8 @@ body.noscroll {
     width: 1165px;
     height: 348px;
     background-image: url(../images/profile-table-top.svg),url(../images/profile-table-bottom.svg);
-    background-position: bottom center, top center;
+    background-position: top center, bottom center;
     background-repeat: no-repeat, no-repeat;
-    overflow-y: scroll;
 }
 .history-table {
     width: 100%;
@@ -1362,6 +1361,19 @@ body.noscroll {
 .history-table .table-body {
     max-height: 273px;
     overflow-y: scroll;
+    scrollbar-width: 6px;
+    scrollbar-color: #FFFFFF;
+}
+.history-table .table-body::-webkit-scrollbar{
+    width: 6px;
+}
+.history-table .table-body::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+.history-table .table-body::-webkit-scrollbar-thumb{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 0;
 }
 .dot-accept::before {
     content: "";
