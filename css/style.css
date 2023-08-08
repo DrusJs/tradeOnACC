@@ -45,6 +45,10 @@
     --skew-block-back: skew(13deg);
     --skew-block-reverse: skew(13deg);
     --skew-block-back-reverse: skew(-13deg);
+    --skew-cards-block: skew(-18deg);
+    --skew-cards-block-back: skew(18deg);
+    --skew-cards-block-reverse: skew(18deg);
+    --skew-cards-block-back-reverse: skew(-18deg);
 }
 
 *,
@@ -113,12 +117,12 @@ body.noscroll {
 }
 
 .header {
-    height: 160px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-    padding: 0 110px 60px 110px;
+    padding: 0 110px 30px 110px;
     position: relative;
 }
 .header.bg {
@@ -126,6 +130,8 @@ body.noscroll {
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 145px;
+    padding: 0 110px 80px 110px;
 }
 
 .burger-menu {
@@ -251,7 +257,7 @@ body.noscroll {
     font-size: 40px;
     color: #FFFFFF;
     white-space: nowrap;
-    margin-top: 100px;
+    margin-top: 65px;
 }
 .main__description {
     font-family: var(--font-play);
@@ -275,6 +281,7 @@ body.noscroll {
     align-items: center;
     gap: 2%;
     padding-top: 20px;
+    margin-top: 15px;
 }
 
 .popular__header-border {
@@ -308,6 +315,12 @@ body.noscroll {
 .non-skew-reverse {
     transform: var(--skew-block-back-reverse);
 }
+.non-skew-cards {
+    transform: var(--skew-cards-block-back);
+}
+.non-skew-cards-reverse {
+    transform: var(--skew-cards-block-back-reverse);
+}
 
 .account-card {
     min-width: 180px;
@@ -327,8 +340,8 @@ body.noscroll {
 .account-card:hover {
     transform: scale(1.06);
 }
-.account-card.non-skew:hover {
-    transform: scale(1.06)  var(--skew-block-back);
+.account-card.non-skew-cards:hover {
+    transform: scale(1.06)  var(--skew-cards-block-back);
 }
 .account-card.small-gap {
     gap: 1px;
@@ -406,7 +419,7 @@ body.noscroll {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    margin: -35px 0 40px 0;
+    margin: -35px 0 55px 0;
     z-index: 1;
 }
 .cards-filter {
@@ -419,7 +432,7 @@ body.noscroll {
 .cards-section-bg {
     padding: 3px;
     background-image: var(--linear-gradient-main);
-    transform: var(--skew-block);
+    transform: var(--skew-cards-block);
     position: relative;
     width: 94%;
 }
@@ -457,6 +470,7 @@ body.noscroll {
 }
 .card-filter__list:hover {
     color: rgba(255, 255, 255, 0.95);
+    font-size: 20px;
 }
 .card-filter__list.active {
     color: #FFFFFF;
@@ -641,7 +655,7 @@ body.noscroll {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 70px 0 100px 0;
+    margin: 70px 0 60px 0;
 }
 .store-form__description-inner {
     min-width: 280px;
@@ -651,6 +665,7 @@ body.noscroll {
     background-position: center;
     position: relative;
     padding: 90px 0 0 70px;
+    margin-top: -110px;
 }
 .store-form__header {
     font-family: var(--font-play-bold);
@@ -851,6 +866,7 @@ body.noscroll {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: -90px;
 }
 .store-form__percent {
     display: flex;
@@ -882,7 +898,10 @@ body.noscroll {
     background-repeat: no-repeat;
     background-position: top;
     width: 100%;
-    padding-top: 80px;
+    padding-top: 90px;
+}
+.store-section-bg.padding {
+    padding-top: 71px;
 }
 .store-section {
     width: 100%;
@@ -891,7 +910,7 @@ body.noscroll {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 36px;
+    gap: 40px;
     position: relative;
 }
 .store-section__shadow-radian {
@@ -915,7 +934,6 @@ body.noscroll {
     font-family: var(--font-play-bold);
     font-size: 40px;
     color: #FFFFFF;
-    margin: 18px 0 0 0;
     text-align: center;
 }
 .store-section__block {
@@ -984,7 +1002,7 @@ body.noscroll {
     max-width: 1450px;
     width: 100%;
     padding: 0 30px;
-    margin-top: 20px;
+    margin-top: 45px;
 }
 .store-section__info {
     font-family: var(--font-play);
@@ -1089,7 +1107,7 @@ body.noscroll {
     background-image: var(--linear-gradient-main);
     transform: var(--skew-block-reverse);
     position: absolute;
-    top: 114px;
+    top: 90px;
 }
 .review__border::before {
     content: "";
@@ -1115,8 +1133,8 @@ body.noscroll {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 18px;
-    gap: 40px 60px;
+    padding-top: 7px;
+    gap: 35px 60px;
 }
 .review__head {
     width: 100%;
@@ -1173,18 +1191,18 @@ body.noscroll {
     background-position: top;
     background-size: cover;
     width: 100%;
-    height: 140px;
+    height: 155px;
     background-color: rgba(0, 0, 0, 0);
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 45px;
 }
 
 .review__link-border {
     padding: 3px;
     background-image: var(--linear-gradient-main);
-    transform: var(--skew-block);
+    transform: var(--skew-cards-block);
     position: absolute;
     top: 0px;
 }
