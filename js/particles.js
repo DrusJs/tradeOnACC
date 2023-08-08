@@ -1084,7 +1084,7 @@ var pJS = function(tag_id, params){
         }
 
         pJS.interactivity.mouse.pos_x = pos_x;
-        pJS.interactivity.mouse.pos_y = pos_y+document.documentElement.scrollTop;
+        pJS.interactivity.mouse.pos_y = pos_y;
 
         if(pJS.tmp.retina){
           pJS.interactivity.mouse.pos_x *= pJS.canvas.pxratio;
