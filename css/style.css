@@ -1243,7 +1243,7 @@ body.noscroll {
     align-items: center;
     width: 100%;
     height: 800px;
-    padding: 4px 120px;
+    padding: 4px 127px;
     max-width: 1546px;
 }
 .profile-container__bg {
@@ -1266,6 +1266,7 @@ body.noscroll {
     width: 100%;
     margin-top: 77px;
     padding-left: 50px;
+    margin-right: 10px;
 }
 .profile-info__content {
     font-size: 25px;
@@ -1273,6 +1274,9 @@ body.noscroll {
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+.profile-info .profile-info__content:nth-child(2) {
+    margin-left: 157px;
 }
 .profile-info__value {
     color: #818591;
@@ -1306,7 +1310,8 @@ body.noscroll {
 }
 .profile-table {
     position: relative;
-    margin-top: 90px;
+    margin-top: 115px;
+    margin-left: 17px;
     font-size: 20px;
     font-family: var(--font-play-bold);
 }
@@ -1336,9 +1341,9 @@ body.noscroll {
 .profile-table__body {
     width: 1165px;
     height: 348px;
-    background-image: url(../images/profile-table-top.svg),url(../images/profile-table-bottom.svg);
-    background-position: top center, bottom center;
-    background-repeat: no-repeat, no-repeat;
+    background: url(../images/profile-table-top.svg) top no-repeat, url(../images/profile-table-bottom.svg) bottom no-repeat;
+    padding-right: 10px;
+    margin: 5px 0 50px 0;
 }
 .history-table {
     width: 100%;
@@ -1363,17 +1368,22 @@ body.noscroll {
     overflow-y: scroll;
     scrollbar-width: 6px;
     scrollbar-color: #FFFFFF;
+    scroll-padding-top: 10px;
+    scroll-padding-bottom: 30px;
 }
 .history-table .table-body::-webkit-scrollbar{
     width: 6px;
+    padding: 10px;
 }
 .history-table .table-body::-webkit-scrollbar-track{
     background-color: transparent;
+    padding: 10px;
 }
 .history-table .table-body::-webkit-scrollbar-thumb{
     background-color: #FFFFFF;
     border-radius: 5px;
     border: 0;
+    padding: 10px;
 }
 .dot-accept::before {
     content: "";
