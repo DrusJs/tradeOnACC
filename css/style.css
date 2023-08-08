@@ -1340,13 +1340,27 @@ body.noscroll {
 }
 .profile-table__body {
     width: 1165px;
-    height: 348px;
+    height: 354px;
     background: url(../images/profile-table-top.svg) top no-repeat, url(../images/profile-table-bottom.svg) bottom no-repeat;
+    padding-right: 10px;
+    margin: 5px 0 50px 0;
+    transition: 400ms ease-in-out;
+}
+.profile-table__body.center {
+    width: 1165px;
+    height: 124px;
+    background: url(../images/profile-table-top.svg) top no-repeat, url(../images/profile-table-center.svg) bottom no-repeat;
     padding-right: 10px;
     margin: 5px 0 50px 0;
 }
 .history-table {
     width: 100%;
+    display: none;
+}
+.history-table.active,
+.referal-table.active,
+.promo-table.active {
+    display: block;
 }
 .history-table .row {
     width: 100%;
@@ -1362,6 +1376,9 @@ body.noscroll {
 }
 .history-table .row.head {
     height: 60px;
+}
+.history-table .row .cell img {
+    cursor: pointer;
 }
 .history-table .table-body {
     max-height: 273px;

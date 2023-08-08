@@ -23,3 +23,8 @@ function setInputNumberAction() {
         accountTotal.innerHTML = accountTotal.innerHTML=="950"?950:+accountTotal.innerHTML+50;
     });
 }
+
+function Center() {
+    document.querySelector(".profile-table__body").classList.add("center");
+    document.querySelector(".history-table").remove();
+}
