@@ -26,5 +26,9 @@ function setInputNumberAction() {
 
 function Center() {
     document.querySelector(".profile-table__body").classList.add("center");
-    document.querySelector(".history-table").remove();
+    document.querySelector(".history-table").classList.remove("active");
+}
+function Center() {
+    document.querySelector(".profile-table__body").classList.remove("center");
+    document.querySelector(".history-table").classList.add("active");
 }
