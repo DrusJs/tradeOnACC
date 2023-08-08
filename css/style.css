@@ -1344,12 +1344,24 @@ body.noscroll {
 .history-table {
     width: 100%;
 }
-.history-table tr {
-    height: 46px;
+.history-table .row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 55px;
 }
-.history-table tbody {
+.history-table .row .cell:last-child{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.history-table .row.head {
+    height: 60px;
+}
+.history-table .table-body {
     max-height: 273px;
-    height: 273px;
+    overflow-y: scroll;
 }
 .dot-accept::before {
     content: "";
@@ -1359,9 +1371,6 @@ body.noscroll {
     background-color: #05E100;
     margin-right: 10px;
     display: inline-block;
-}
-.history-table tbody td {
-    text-align: center;
 }
 
 /*media*/
