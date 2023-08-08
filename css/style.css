@@ -1344,7 +1344,7 @@ body.noscroll {
     background: url(../images/profile-table-top.svg) top no-repeat, url(../images/profile-table-bottom.svg) bottom no-repeat;
     padding-right: 10px;
     margin: 5px 0 50px 0;
-    transition: 400ms ease-in-out;
+    transition: height 400ms ease-in-out;
 }
 .profile-table__body.center {
     width: 1165px;
@@ -1383,8 +1383,8 @@ body.noscroll {
 .history-table .table-body {
     max-height: 273px;
     overflow-y: scroll;
-    scrollbar-width: 6px;
-    scrollbar-color: #FFFFFF;
+    scrollbar-width: auto;
+    scrollbar-color: white transparent;
     scroll-padding-top: 10px;
     scroll-padding-bottom: 30px;
 }
