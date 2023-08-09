@@ -24,11 +24,19 @@ function setInputNumberAction() {
     });
 }
 
-function Center() {
+function Center(num, elem) {
     document.querySelector(".profile-table__body").classList.add("center");
     document.querySelector(".history-table").classList.remove("active");
+    document.querySelector(".referal-table").classList.add("active");
+    document.querySelector(".referal-accordion").classList.add("active");
+    document.querySelector(".profile-table__header-item.active").classList.remove("active");
+    elem.classList.add("active");
 }
-function CenterNo() {
+function CenterNo(num, elem) {
     document.querySelector(".profile-table__body").classList.remove("center");
     document.querySelector(".history-table").classList.add("active");
+    document.querySelector(".referal-table").classList.remove("active");
+    document.querySelector(".referal-accordion").classList.remove("active");
+    document.querySelector(".profile-table__header-item.active").classList.remove("active");
+    elem.classList.add("active");
 }

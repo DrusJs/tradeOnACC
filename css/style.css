@@ -948,7 +948,8 @@ body.noscroll {
     color: #FFFFFF;
 }
 
-.store-section .gradient {
+.store-section .gradient,
+.referal-table-item .gradient {
     background: var(--linear-gradient-main);
     background-clip: text;
     -webkit-background-clip: text;
@@ -1236,7 +1237,7 @@ body.noscroll {
 /*profile.html*/
 
 .profile-container {
-    margin: 40px 0 160px 0;
+    margin: 40px 0 0 0;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1245,6 +1246,7 @@ body.noscroll {
     height: 800px;
     padding: 4px 127px;
     max-width: 1546px;
+    z-index: 1;
 }
 .profile-container__bg {
     position: absolute;
@@ -1353,14 +1355,21 @@ body.noscroll {
     padding-right: 10px;
     margin: 5px 0 50px 0;
 }
-.history-table {
+.history-table,
+.referal-table,
+.promo-table {
     width: 100%;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: opacity 500ms ease-in-out;
 }
 .history-table.active,
 .referal-table.active,
 .promo-table.active {
-    display: block;
+    visibility: visible;
+    opacity: 1;
+    height: 100%;
 }
 .history-table .row {
     width: 100%;
@@ -1410,6 +1419,71 @@ body.noscroll {
     background-color: #05E100;
     margin-right: 10px;
     display: inline-block;
+}
+.referal-table {
+
+}
+.referal-table-head {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    height: 122px;
+}
+.referal-table-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.referal-table-title {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 175px;
+    height: 46px;
+    font-family: var(--font-play-bold);
+    font-size: 20px;
+    color: #FFFFFF;
+}
+.referal-list-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.referal-list {
+    width: 100%;
+    padding: 20px 20px 12px 75px;
+}
+.referal-list-point {
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    min-width: 41px;
+    min-height: 44px;
+    background-color: #E6E7F3;
+    color: #030D23;
+    font-size: 20px;
+    font-family: var(--font-play-bold);
+    line-height: 44px;
+    text-align: center;
+}
+.referal-accordion {
+    background-image: url(../images/referal-accordion-bg.svg);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    width: 100%;
+    max-width: 1490px;
+    height: 0;
+    visibility: hidden;
+    margin: -115px 0 275px 20px;
+    z-index: 0;
+    transition: height 600ms ease-in-out, visibility 600ms;
+}
+.referal-accordion.active  {
+    height: 758px;
+    visibility: visible;    
+    margin: -115px 0 160px 20px;
 }
 
 /*media*/

@@ -97,9 +97,9 @@
                 </div>
                 <div class="profile-table">
                     <div class="profile-table__header">
-                        <div class="profile-table__header-item active" onclick="CenterNo()">История покупок</div>
-                        <div class="profile-table__header-item" onclick="Center()">Реферальная система</div>
-                        <div class="profile-table__header-item" onclick="CenterNo()">Мои промокоды</div>
+                        <div class="profile-table__header-item active" onclick="CenterNo(1,this)">История покупок</div>
+                        <div class="profile-table__header-item" onclick="Center(2, this)">Реферальная система</div>
+                        <div class="profile-table__header-item" onclick="CenterNo(3, this)">Мои промокоды</div>
                     </div>
                     <div class="profile-table__body">
                         <div class="history-table active">
@@ -211,13 +211,47 @@
                             </div>
                         </div>
                         <div class="referal-table">
-
+                            <div class="referal-table-head">
+                                <div class="referal-table-item">
+                                    <div class="referal-table-title">Приглашено пользователей</div>
+                                    <span class="gradient">120</span>
+                                </div>
+                                <div class="referal-table-item">
+                                    <div class="referal-table-title">Ваш процент вознаграждений</div>
+                                    <span class="gradient">10%</span>
+                                </div>
+                                <div class="referal-table-item">
+                                    <div class="referal-table-title">Всего заработано</div>
+                                    <span class="gradient">12,500р</span>
+                                </div>
+                            </div>
+                            <div class="referal-list">
+                                <div class="referal-list-item">
+                                    <div class="referal-list-point">1</div>
+                                    <div class="referal-list-text">При вводе реферального купона клиент закрепляется за вами. Купон даёт клиенту скидку 5%. Также вы получаете 20% от купленных клиентом заказов.</div>
+                                </div>
+                                <div class="referal-list-item">
+                                    <div class="referal-list-point">2</div>
+                                    <div class="referal-list-text">Если клиент уже совершал покупки на нашем сервисе или же принадлежит другому рефералу, то за вами он не закрепится.</div>
+                                </div>
+                                <div class="referal-list-item">
+                                    <div class="referal-list-point">3</div>
+                                    <div class="referal-list-text">На данный момент реферал закрепляется за вами на 12 месяцев. Выплаты производятся по понедельникам и четвергам.</div>
+                                </div>
+                                <div class="referal-list-item">
+                                    <div class="referal-list-point">4</div>
+                                    <div class="referal-list-text">За нарушение правил администрация сервиса имеет право блокировать партнёрские ссылки и аккаунты без выплаты вознаграждения.</div>
+                                </div>
+                            </div>
                         </div>
                         <div class="promo-table">
 
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="referal-accordion">
+
             </div>               
         </main>
 
