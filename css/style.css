@@ -1552,6 +1552,26 @@ body.noscroll {
     background-color: #061535;
 }
 
+/*modals*/
+.modal-wrapper {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+}
+.modal-container {
+    position: relative;
+}
+.modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 
 
 /*media*/
