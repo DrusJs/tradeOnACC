@@ -1371,25 +1371,45 @@ body.noscroll {
     opacity: 1;
     height: 100%;
 }
-.history-table .row {
+.history-table .row,
+.promo-table .row {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 55px;
+    padding: 0 40px;
 }
 .history-table .row .cell:last-child{
     display: flex;
     align-items: center;
     gap: 15px;
 }
-.history-table .row.head {
+.history-table .row.head,
+.promo-table .row.head  {
     height: 60px;
+}
+.promo-table .row .cell:nth-child(1) {
+    width: 140px;
+    text-align: center;
+}
+.promo-table .row .cell:nth-child(2) {
+    width: 140px;
+    text-align: center;
+}
+.promo-table .row .cell:nth-child(3) {
+    width: 100px;
+    text-align: center;
+}
+.promo-table .row .cell:nth-child(6) {
+    width: 150px;
+    text-align: center;
 }
 .history-table .row .cell img {
     cursor: pointer;
 }
-.history-table .table-body {
+.history-table .table-body,
+.promo-table .table-body {
     max-height: 273px;
     overflow-y: scroll;
     scrollbar-width: auto;
@@ -1397,16 +1417,19 @@ body.noscroll {
     scroll-padding-top: 10px;
     scroll-padding-bottom: 30px;
 }
+.promo-table .table-body::-webkit-scrollbar,
 .history-table .table-body::-webkit-scrollbar,
 .accordion-body::-webkit-scrollbar{
     width: 6px;
     padding: 10px;
 }
+.promo-table .table-body::-webkit-scrollbar-track,
 .history-table .table-body::-webkit-scrollbar-track,
 .accordion-body::-webkit-scrollbar-track{
     background-color: transparent;
     padding: 10px;
 }
+.promo-table .table-body::-webkit-scrollbar-thumb,
 .history-table .table-body::-webkit-scrollbar-thumb,
 .accordion-body::-webkit-scrollbar-thumb{
     background-color: #FFFFFF;
@@ -1420,6 +1443,15 @@ body.noscroll {
     height: 14px;
     border-radius: 100%;
     background-color: #05E100;
+    margin-right: 10px;
+    display: inline-block;
+}
+.dot-refuse::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    background-color: #E10000;
     margin-right: 10px;
     display: inline-block;
 }
@@ -1492,7 +1524,13 @@ body.noscroll {
     margin: -115px 0 160px 20px;
     padding-top: 125px;
 }
-
+.accordion-container {
+    transform: translateY(-600px);
+    transition: transform 600ms ease-in-out;
+}
+.referal-accordion.active .accordion-container {
+    transform: translateY(0px);
+}
 .accordion-body {
     max-height: 500px;
     overflow-y: scroll;

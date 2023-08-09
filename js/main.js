@@ -46,7 +46,7 @@ function CenterNoPromo(num, elem) {
     document.querySelector(".profile-table__body").classList.remove("center");
     document.querySelector(".history-table").classList.remove("active");
     document.querySelector(".referal-table").classList.remove("active");
-    document.querySelector(".promo-table").classList.remove("active");
+    document.querySelector(".promo-table").classList.add("active");
     document.querySelector(".referal-accordion").classList.remove("active");
     document.querySelector(".profile-table__header-item.active").classList.remove("active");
     elem.classList.add("active");
