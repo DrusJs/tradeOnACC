@@ -1682,6 +1682,279 @@ body.noscroll {
     margin-bottom: 10px;
     display: inline;
 }
+.modal-container.modal__balance {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 468px;
+    height: 850px;
+    padding: 10px 0 0 0;
+    margin-top: 20px;
+    scrollbar-width: auto;
+    scrollbar-color: white transparent;
+    font-family: var(--font-play-bold);
+    font-size: 25px;
+     text-align: center;
+     gap: 15px;
+}
+.modal-container.modal__balance .modal-close {
+    display: block;
+    top: -50px;
+    right: 10px;
+    position: absolute;
+}
+.balance-header-bg {
+    position: absolute;
+    top: -56px;
+    z-index: -1;
+}
+.balance-header {
+    font-family: var(--font-play-bold);
+    font-size: 20px;
+    color: #FFFFFF;
+    position: absolute;
+    top: -40px;
+    white-space: nowrap;
+}
+.deposit__methods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 40px;
+    gap: 15px 10px;
+}
+.deposit__methods .method {
+    height: 57px;
+    font-family: var(--font-monument);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;    
+    background-image: linear-gradient(180deg, #040C20 0%, #061536 100%);    
+    background-clip: padding-box;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.deposit__methods .method.active::after {
+    position: absolute;
+    top: -4px; bottom: -4px;
+    left: -4px; right: -4px;
+    background-image: var(--linear-gradient-main);
+    content: '';
+    border-radius: 20px;
+    z-index: -1;
+} 
+.deposit__methods .method .low {
+    font-size: 8px; 
+}
+.deposit__methods .method .upper {
+    font-size: 10px;
+    position: absolute;
+    top: -5px;
+    right: -10px; 
+}
+.input-deposit {
+    width: 300px;
+    height: 58px;
+    font-family: var(--font-play-bold);
+    font-size: 20px;
+    color: #FFFFFF;
+    background-image: url(../images/modal-balance-input.svg);
+    background-color: transparent;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    padding: 10px 40px;
+    text-align: center;
+    outline: none;
+    filter: drop-shadow(0px 0px 8px #01C9FF);
+    position: relative;
+}
+.input-deposit::before {
+    content: "₽";
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    font-family: var(--font-play-bold);
+    font-size: 20px;
+    color: #FFFFFF;
+    z-index: 2;
+}
+.input-balance-text {
+    width: 375px;
+    height: 73px;
+    font-family: var(--font-play-bold);
+    font-size: 20px;
+    color: #FFFFFF;
+    background-image: url(../images/modal-balance-input.svg);
+    background-color: transparent;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    padding: 10px 40px;
+    text-align: center;
+    outline: none;
+    filter: drop-shadow(0px 0px 8px #01C9FF);
+}
+.input-balance-text::placeholder {
+    color: #FFFFFF;
+}
+.input-balance-text:focus::placeholder {
+    opacity: 0;
+}
+.balance-button {
+    width: 390px;
+    height: 48px;
+    background-image: url(../images/modal-balance-button.svg);
+    background-color: transparent;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0px 0px 8px #01C9FF);
+    font-family: var(--font-play-bold);
+    font-size: 20px;
+    padding: 7px;
+    text-align: center;
+    margin-top: 45px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+.balance-button::before,
+.none-balance-button::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #45F5B6, #03a9f4);
+    background-size: auto;
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: .5s;
+}
+.balance-button:hover,
+.none-balance-button:hover {
+    transform: scale(1.07);
+  }
+
+.balance-button:hover::before,
+.none-balance-button:hover::before {
+    filter: blur(20px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+}
+
+.modal__none-balance {
+    max-width: 756px;
+    width: 100%;
+    height: 160px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0;
+}
+.none-balance-header-bg {
+    position: absolute;
+    top: 0;
+}
+.none-balance-bg {
+    position: absolute;
+    bottom: 2px;
+}
+.modal__none-balance .modal-close {
+    position: relative;
+    left: 280px;
+    width: 25px;
+}
+.none-balance-header {
+    font-family: var(--font-play-bold);
+    font-size: 25px;
+    color: #EFA247;
+    text-align: center;
+    z-index: 1;
+    position: absolute;
+    top: 7px;
+}
+.none-balance-button {
+    width: 301px;
+    height: 37px;
+    background-image: url(../images/modal-balance-button.svg);
+    background-color: transparent;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0px 0px 8px #01C9FF);
+    font-family: var(--font-play-bold);
+    font-size: 20px;
+    padding: 7px;
+    text-align: center;
+    margin-top: 45px;
+    color: #FFFFFF;    
+    transition: 500ms ease-in-out;
+    cursor: pointer;
+}
+
+.modal-container.modal__balance-cript {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 468px;
+    height: 592px;
+    padding: 10px 0 0 0;
+    margin-top: 20px;
+    scrollbar-width: auto;
+    scrollbar-color: white transparent;
+    font-family: var(--font-play-bold);
+    font-size: 25px;
+    text-align: center;
+    gap: 15px;
+     
+}
+.modal-container.modal__balance-cript .modal-close {
+    display: block;
+    top: -50px;
+    right: 10px;
+    position: absolute;
+}
+.input-network {
+    width: 428px;
+    height: 55px;
+    border-radius: 10px;
+    background-color: #010716;
+    font-family: var(--font-play-bold);
+    font-size: 20px;
+    color: #FFFFFF;
+    outline: 0;
+    padding: 16px 50px 16px 13px;
+    background-image: url(../images/input-copy.svg);
+    background-repeat: no-repeat;
+    background-position: center right 10px;
+    background-size: 24px 24px;
+}
+.balance-refuse-button {
+    width: 392px;
+    height: 44px;
+    font-family: var(--font-play-bold);
+    font-size: 20px;
+    color: #FFFFFF;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    background-image: url(../images/modal-balance-refuse.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+}
+.modal__balance-cript .balance-button {
+    margin-top: 0;
+}
 
 /*modal.css*/
 .label-modal, 
