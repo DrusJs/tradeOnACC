@@ -129,7 +129,7 @@ body.noscroll {
     background-image: url(../images/review-header.svg);
     background-position: bottom;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     height: 145px;
     padding: 0 110px 80px 110px;
 }
@@ -321,6 +321,11 @@ body.noscroll {
 .non-skew-cards-reverse {
     transform: var(--skew-cards-block-back-reverse);
 }
+.scroll-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .account-card {
     min-width: 180px;
@@ -336,9 +341,6 @@ body.noscroll {
     cursor: pointer;
     transition: 170ms ease-in;
 
-}
-.account-card:hover {
-    transform: scale(1.06);
 }
 .account-card.non-skew-cards:hover {
     transform: scale(1.06)  var(--skew-cards-block-back);
@@ -429,12 +431,52 @@ body.noscroll {
     display: flex;
     padding-left: 22px;
 }
+.cards-filter-mobile-bg {
+    padding: 3px;
+    background-image: var(--linear-gradient-main);
+    transform: var(--skew-block);
+    position: absolute;
+    top: -70px;
+    cursor: pointer;
+    display: none;
+}
+.cards-filter-mobile-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -0.5px;
+    width: calc(100% + 1px);
+    height: 101%;
+    background-image: var(--linear-gradient-blur);
+    z-index: -1;
+}
+.cards-filter-mobile {
+    font-family: var(--font-play-bold);
+    font-size: 17px;
+    color: #FFFFFF;
+    background-color: var(--color-background-container);
+    padding: 7px 42px 7px 22px;
+    position: relative;
+}
+.cards-filter-mobile::after {
+    content: "";
+    width: 14px;
+    height: 8px; 
+    background-image: url(../images/cards-selector.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    transform: var(--skew-block-back);
+}
 .cards-section-bg {
     padding: 3px;
     background-image: var(--linear-gradient-main);
     transform: var(--skew-cards-block);
     position: relative;
-    width: 94%;
+    width: 90%;
 }
 .cards-section-bg::before {
     content: "";
@@ -573,18 +615,21 @@ body.noscroll {
     opacity: 0;
     animation-fill-mode: forwards;
     animation-delay: 200ms;
+    pointer-events: none;
 }
 .instructions__block.animtwo {
     animation: instructionAnimate 500ms ease-in;
     opacity: 0;
     animation-fill-mode: forwards;
     animation-delay: 500ms;
+    pointer-events: none;
 }
 .instructions__block.animthree {
     animation: instructionAnimate 500ms ease-in;
     opacity: 0;
     animation-fill-mode: forwards;
     animation-delay: 800ms;
+    pointer-events: none;
 }
 .instructions__block.purple-bg {
     background-image: url(../images/purpleInstruction.svg);
@@ -1165,6 +1210,7 @@ body.noscroll {
     padding: 23px 30px 0 21px;
     font-family: var(--font-play-bold);
     display: flex;
+    position: relative;
     gap: 13px;
 }
 .review__card-img {
@@ -1185,6 +1231,15 @@ body.noscroll {
 }
 .review__card-desc {
     font-size: 20px;
+}
+.more-review {
+    font-size: 17px;
+    font-family: var(--font-play-bold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: #FFFFFF;
+    margin-top: -30px;
+    display: none;
 }
 .review__link-bg {
     background-image: url(../images/store-section.svg);
@@ -2299,12 +2354,15 @@ body.noscroll {
     
 }
 @media screen and (max-width: 1250px) {
-    .header {        
+    .header{        
         padding: 0 60px 30px 60px;
     }
+    .header.bg {
+        padding: 0 60px 80px 60px;
+    }
     .instructions {
-        transform: scale(0.65);        
-        margin: -40px 0 0px 0;
+        transform: scale(0.60);        
+        margin: -40px 0 0 0;
     }
     .footer__border-gradient {
         padding: 35px 50px 0 50px;
@@ -2314,14 +2372,36 @@ body.noscroll {
     .header {        
         padding: 0 20px 30px 20px;
     }
+    .header.bg {
+        padding: 0 20px 80px 20px;
+    }
     .store-section__block-svg {
         padding: 75px 50px 40px 10px;
     }
-}
-
-@media screen and (max-width: 880px) {
     .navigation, .logo {
         display: none;
+    }
+    .instructions {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        height: auto;
+        width: 100%;
+        transform: none; 
+        margin: 32px 0 61px 0;
+    }
+    .instructions__block {
+        width: 500px;
+        transition: none;
+    }
+    .instructions__block:hover {
+        transform: none;
+    }
+    .instructions__block:hover .instructions__button{
+        transform: none;
+    }
+    .instructions__button {
+        transition: none;
     }
     .burger-menu {
         display: flex;
@@ -2339,5 +2419,167 @@ body.noscroll {
     .footer-nav {
         flex-direction: column;
         gap: 50px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .header.bg {
+        background-image: none;
+        padding: 0 20px 40px 20px;
+        height: 90px;
+    }
+    .popular__header-border {
+        top: 58px;
+    }
+    .popular {
+        height: 460px;
+        padding-top: 0;
+        margin-top: -45px;
+    }
+    .header__main, .main__description,
+    .review__border, .review__head, .review__link-bg {
+        display: none;
+    }
+    .cards-section-bg {
+        padding: 0;
+        background-image: none;
+        transform: none;
+        width: 100%;
+    }
+    .cards-wrapper {
+        position: relative;
+        margin: 0;
+    }
+    .cards-section-bg::before {
+        content: "";
+        display: none;
+    }
+    .cards-filter {
+        display: none;
+    }
+    .cards-filter-mobile-bg {
+        display: block;
+    }
+    .scroll-container {
+        position: absolute;
+        width: 100%;
+        left: 0px;
+        justify-content: flex-start;
+        padding: 20px;
+        overflow-x: scroll;
+        scrollbar-color: white transparent;
+        scroll-padding-left: 30px;
+        scroll-padding-right: 30px;
+    }
+    .scroll-container::-webkit-scrollbar {
+        height: 4px;
+    }
+    .scroll-container::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    .scroll-container::-webkit-scrollbar-thumb {
+        background-color: #FFFFFF;
+        border-radius: 15px;
+        border: 0;
+    }
+    .cards-section {
+        background-color: rgba(3,13,35,0);
+        background-image: linear-gradient(180deg, rgba(3,13,35,0) 0%, rgba(3,13,35,1) 30%, rgba(3,13,35,1) 100%);
+        height: auto;
+        overflow-x: hidden;
+        padding: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 30px 0 55px 0;
+    }
+    .account-card.non-skew-cards {
+        transform: none;
+        transition: none;
+    }
+    .account-card.non-skew-cards:hover {
+        transform: none;
+    }
+    .popular {
+        background-image: url(../images/popular-bg-mobile.svg);
+    }
+    .popular__header {
+        font-size: 17px;
+        display: flex;
+        background-color: var(--color-background-container);
+        padding: 7px 22px;
+    }
+    .review__container {
+        padding: 90px 20px 48px 20px;
+        gap: 50px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .more-review {
+        display: block;
+        cursor: pointer;
+    }
+    .review__card {
+        background-image: url(../images/review-block-mobile.svg);
+        background-size: contain;
+        width: 334px;
+    }
+    
+    .review__card.hide {
+        display: none;
+    }
+    .review__users-count {
+        background-image: url(../images/review-users-mobile.png);
+        padding-top: 22px;
+        font-size: 17px;
+        height: 60px;
+        position: absolute;
+        top: 90px;
+    }
+    .review__card-img {
+        position: absolute;
+        top: -30px;
+        left: 40px;
+    }
+    .review__card-name {
+        font-size: 17px;
+        padding-left: 130px;
+    }
+    .review__card-desc {
+        font-size: 15px;
+        padding: 15px 0px 15px 30px;
+    }
+    .instructions__block {
+        width: 288px;
+        min-width: auto;
+        min-height: auto;
+        height: 320px;
+        padding: 40px 0 25px 0;
+        background-size: 288px 320px;
+        transition: none;
+    }
+    .instructions__images {
+        width: 280px;
+        transform: scale(0.6);
+    }
+
+    .instructions__block.purple-bg {
+        background-image: url(../images/purpleInstructionsMobile.svg);
+    }
+    .instructions__block.green-bg {
+        background-image: url(../images/greenInstructionsMobile.svg);
+    }
+    .instructions__block.red-bg {
+        background-image: url(../images/redInstructionsMobile.svg);
+    }
+    .instructions__header {
+        font-size: 17px;
+        width: 200px;
+        height: auto;
+    }
+    .instructions__button {
+        font-size: 17px;
+        background-size: 150px 41px;
+        transition: none;
     }
 }

@@ -119,6 +119,15 @@ document.querySelector(".repeat-button").addEventListener("click", (el) => {
 })
 }
 
+if (document.querySelector(".more-review")) {
+    document.querySelector(".more-review").addEventListener("click", (el) => {
+        el.currentTarget.style.display = "none";
+        document.querySelectorAll(".review__card.hide").forEach((el)=>{
+            el.classList.remove("hide");
+        })
+    })
+}
+
 
 if (document.querySelector(".animone")) {
     setTimeout(()=>{
