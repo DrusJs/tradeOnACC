@@ -4,16 +4,17 @@
 /////////////////////
 if (document.getElementById("burger-button")) {
 const burgerButton = document.getElementById("burger-button");
+const popupMenu = document.getElementById("popup-menu");
 
 burgerButton.addEventListener("click", ()=>{
     burgerButton.classList.toggle("active");
-    // if (burgerButton.classList.contains("active")) {
-    //     popupMenu.classList.add("active");
-    //     document.body.classList.add("noscroll");
-    // } else {
-    //     popupMenu.classList.remove("active");
-    //     document.body.classList.remove("noscroll");
-    // }
+    if (burgerButton.classList.contains("active")) {
+        popupMenu.classList.add("active");
+        document.body.classList.add("noscroll");
+    } else {
+        popupMenu.classList.remove("active");
+        document.body.classList.remove("noscroll");
+    }
 });
 }
 /////////////////////
