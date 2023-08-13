@@ -1703,6 +1703,7 @@ body.noscroll {
     top: -50px;
     right: 10px;
     position: absolute;
+    cursor: pointer;
 }
 .balance-header-bg {
     position: absolute;
@@ -1711,7 +1712,7 @@ body.noscroll {
 }
 .balance-header {
     font-family: var(--font-play-bold);
-    font-size: 20px;
+    font-size: 25px;
     color: #FFFFFF;
     position: absolute;
     top: -40px;
@@ -1723,7 +1724,7 @@ body.noscroll {
     padding: 0 40px;
     gap: 15px 10px;
 }
-.deposit__methods .method {
+.method {
     height: 57px;
     font-family: var(--font-monument);
     font-size: 12px;
@@ -1737,7 +1738,7 @@ body.noscroll {
     position: relative;
     cursor: pointer;
 }
-.deposit__methods .method.active::after {
+.method.active::after {
     position: absolute;
     top: -4px; bottom: -4px;
     left: -4px; right: -4px;
@@ -1870,6 +1871,7 @@ body.noscroll {
     position: relative;
     left: 280px;
     width: 25px;
+    cursor: pointer;
 }
 .none-balance-header {
     font-family: var(--font-play-bold);
@@ -1921,6 +1923,7 @@ body.noscroll {
     top: -50px;
     right: 10px;
     position: absolute;
+    cursor: pointer;
 }
 .input-network {
     width: 428px;
@@ -1936,6 +1939,7 @@ body.noscroll {
     background-repeat: no-repeat;
     background-position: center right 10px;
     background-size: 24px 24px;
+    cursor: pointer;
 }
 .balance-refuse-button {
     width: 392px;
@@ -1986,6 +1990,7 @@ body.noscroll {
     top: 12px;
     right: 12px;
     display: none;
+    cursor: pointer;
 }
 
 .label-modal {
