@@ -1851,13 +1851,13 @@ body.noscroll {
 }
 .input-balance-text {
     width: 375px;
-    height: 73px;
+    height: 63px;
     font-family: var(--font-play-bold);
     font-size: 20px;
     color: #FFFFFF;
     background-image: url(../images/modal-balance-input.svg);
     background-color: transparent;
-    background-size: cover; 
+    background-size: 375px 63px; 
     background-repeat: no-repeat;
     padding: 10px 40px;
     text-align: center;
@@ -1971,7 +1971,7 @@ body.noscroll {
     text-align: center;
     margin-top: 45px;
     color: #FFFFFF;    
-    transition: 500ms ease-in-out;
+    transition: transform 500ms ease-in-out;
     cursor: pointer;
 }
 
@@ -2046,6 +2046,7 @@ body.noscroll {
 .clicked-button {
     font-family: var(--font-play-bold);
     font-size: 20px;
+    outline: none;
 }
 
 .modal-container {
@@ -2103,6 +2104,9 @@ body.noscroll {
 .input-modal::placeholder {
     text-align: center;
     color: #AEAEAE;
+}
+.input-modal:focus::placeholder {
+    opacity: 0;
 }
 
 .social__media-button-row {
@@ -2410,6 +2414,9 @@ body.noscroll {
     .header {        
         padding: 0 20px 30px 20px;
     }
+    .auth {
+        flex-direction: row-reverse;
+    }
     .header.bg {
         padding: 0 20px 80px 20px;
     }
@@ -2465,6 +2472,9 @@ body.noscroll {
         background-image: none;
         padding: 0 20px 40px 20px;
         height: 90px;
+    }
+    .profile__nickname {
+        display: none;
     }
     .modal__none-balance {
         height: 150px;
