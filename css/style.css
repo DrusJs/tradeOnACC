@@ -891,6 +891,7 @@ body.noscroll {
     text-align: center;
     padding: 17px 0 0 0;
     cursor: pointer;
+    transition: 500ms ease-in-out;
 }
 .main-accept__percents {
     color: #FF7A00;
@@ -1061,19 +1062,23 @@ body.noscroll {
     margin:40px 0 90px 0;
 }
 
+
 .store-section__block-svg {
     position: relative;
     max-width: 1490px;
     width: 100%;
     padding: 75px 100px 40px 100px;
 }
-.block-svg__background {
+.block-svg__background, .block-svg__background-mob {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     max-width: 1490px;
     height: 100%;
+}
+.block-svg__background-mob {
+    display: none;
 }
 .text {
     z-index: 1;
@@ -1129,12 +1134,12 @@ body.noscroll {
 }
 .pulse-animation:hover::after,
 .pulse-animation:hover::before {
-    animation: animate 2s linear;
+    animation: anim 2s linear;
 }
 .animate:after, .animate::before {
-    animation: animate 2s linear;
+    animation: anim 2s linear;
 }
-@keyframes animate
+@keyframes anim
 {
     0%
     {
@@ -1312,6 +1317,7 @@ body.noscroll {
     width: 100%;
     height: 797px;
 }
+
 .profile-title {
     font-size: 25px;
     font-family: var(--font-play-bold);
@@ -1456,6 +1462,10 @@ body.noscroll {
     width: 100px;
     text-align: center;
 }
+.promo-table .row .cell:nth-child(5) {
+    width: 165px;
+    text-align: center;
+}
 .promo-table .row .cell:nth-child(6) {
     width: 150px;
     text-align: center;
@@ -1566,7 +1576,7 @@ body.noscroll {
     max-width: 1490px;
     height: 0;
     visibility: hidden;
-    margin: -115px 0 275px 20px;
+    margin: -115px 40px 275px 60px;
     z-index: 0;
     padding: 0 82px;
     font-size: 20px;
@@ -1575,8 +1585,9 @@ body.noscroll {
 }
 .referal-accordion.active  {
     height: 758px;
+    max-height: 758px;
     visibility: visible;    
-    margin: -115px 0 160px 20px;
+    margin: -115px 40px 160px 60px;
     padding-top: 125px;
 }
 .accordion-container {
@@ -1587,6 +1598,7 @@ body.noscroll {
     transform: translateY(0px);
 }
 .accordion-body {
+    height: auto;
     max-height: 500px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -1877,7 +1889,8 @@ body.noscroll {
     transition: 500ms ease-in-out;
 }
 .balance-button::before,
-.none-balance-button::before {
+.none-balance-button::before,
+.main-accept__button::before {
     content: "";
     position: absolute;
     top: -5px;
@@ -1893,12 +1906,14 @@ body.noscroll {
     transition: .5s;
 }
 .balance-button:hover,
-.none-balance-button:hover {
+.none-balance-button:hover,
+.main-accept__button:hover {
     transform: scale(1.07);
-  }
+}
 
 .balance-button:hover::before,
-.none-balance-button:hover::before {
+.none-balance-button:hover::before,
+.main-accept__button:hover::before {
     filter: blur(20px);
     opacity: 1;
     animation: animate 8s linear infinite;
@@ -1917,10 +1932,14 @@ body.noscroll {
 .none-balance-header-bg {
     position: absolute;
     top: 0;
+    width: 100%;
+    max-width: 539px;
 }
 .none-balance-bg {
     position: absolute;
     bottom: 2px;
+    width: 100%;
+    max-width: 756px;
 }
 .modal__none-balance .modal-close {
     position: relative;
@@ -2353,7 +2372,7 @@ body.noscroll {
     }
     
 }
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1260px) {
     .header{        
         padding: 0 60px 30px 60px;
     }
@@ -2366,6 +2385,25 @@ body.noscroll {
     }
     .footer__border-gradient {
         padding: 35px 50px 0 50px;
+    }
+}
+@media screen and (max-width: 1150px) {
+    .store-form {
+        margin: 50px 0 260px 0;
+        position: relative;
+        justify-content: center;
+    }
+    .store-form__description-inner {
+        position: absolute;
+        top: 435px;
+        left: 40px;
+        margin-top: 0px;
+    }
+    .store-form__percent-inner {
+        position: absolute;
+        top: 435px;
+        right: 40px;        
+        margin-top: 0px;
     }
 }
 @media screen and (max-width: 980px) {
@@ -2427,6 +2465,163 @@ body.noscroll {
         background-image: none;
         padding: 0 20px 40px 20px;
         height: 90px;
+    }
+    .modal__none-balance {
+        height: 150px;
+        min-width: 360px
+    }
+    .modal__none-balance .modal-close {
+        left: 150px;
+        top: -10px;
+      }
+    .none-balance-header-bg {
+        max-width: 276px;
+        height: 36px;
+    }
+    .none-balance-button {
+        font-size: 17px;
+        background-image: url(../images/modal-balance-button-mobile.svg);
+        width: 180px;
+        height: 42px;
+    }
+    .none-balance-header {
+        font-size: 20px;
+    }
+    .none-balance-bg {
+        max-width: 364px;
+    }
+    .balance-button:hover,
+    .none-balance-button:hover,
+    .main-accept__button:hover,
+    .modal-button:hover {
+        transform: none;
+    }
+
+    .balance-button:hover::before,
+    .none-balance-button:hover::before,
+    .main-accept__button:hover::before,
+    .modal-button:hover::before {
+        filter: none;
+        opacity: 0;
+        animation: none;
+    }
+    .store-form {
+        margin-bottom: -210px;
+    }
+    .store-section__block-svg .store-form__header {
+        top: -35px;
+        padding: 0;
+      }
+    .store-section__block-svg {
+        width: 400px;
+        height: 300px;
+        padding: 10px;
+        margin-bottom: 50px;
+    }
+    .block-svg__background {
+        display: none;
+    }
+    .block-svg__background-mob {
+        display: block;        
+        width: 406px;
+        height: 300px;
+    }
+    .store-section__shadow-radian {
+        display: none;
+    }
+    .text {
+        font-size: 15px;
+        line-height: 1.2;
+    }
+    .store-section-bg {
+        background-image: url(../images/store-section-mobile.svg);
+        padding-top: 450px;
+    }
+    .store-section-bg.padding {
+        padding-top: 450px;
+    }
+    .store-section {
+        gap: 10px;
+    }
+    .store-section__header {
+        font-size: 17px;
+        margin-top: 25px;
+    }
+    .store-section__example {
+        background-size: 292px 109px;
+    }
+    .store-section__block, .store-section__square {
+        font-size: 15px;
+        width: 90%;
+        background-size: 100%;
+        padding: 20px 20px 0 30px;
+        background-image: url(../images/store-section-block-mobile.svg);
+        background-size: contain;
+        width: 326px;
+        height: auto;
+    }
+
+    .store-section__flex {
+        flex-direction: column;
+        align-items: center;
+    }
+    .store-form__description-inner {
+        background-image: url(../images/accountDesc-mobile.png);
+        min-width: 175px;
+        height: 210px;
+        padding: 58px 0 0 36px;
+    }
+    .store-form__description-list {
+        font-size: 15px;
+    }
+    .store-form__description {
+        width: 125px;
+    }
+    .store-form__description-inner .store-form__header {
+        left: -20px;
+      }
+    .store-form__percent-inner {
+        background-image: url(../images/accountPercents-mobile.png);
+        min-width: 205px;
+        height: 245px;
+        top: 430px;
+    }
+    .store-form__percent-inner .store-form__header {
+        top: 18px;
+    }
+    .store-form__percent {
+        margin-top: 5px;
+    }
+    .store-form__percent-list {
+        font-size: 15px;
+        width: 155px;
+    }
+    .store-form__main {
+        background-image: url(../images/accountBuy-bg-mobile.png);
+        min-width: 380px;
+        height: 390px;
+        padding: 30px 0 0 0;
+        font-size: 17px;
+    }
+    .store-form__header {
+        font-size: 17px;
+        top: 14px;
+    }
+    .store-form__main-field, .store-form__main-inputs {
+        background-image: none;
+        height: 80px;
+    }
+    .store-form__main-field {
+        padding: 22px 0 0 0;
+    }
+    .store-form__main-accept {
+        margin: 40px 0 0 0;
+    }
+    .store-section__warning, .store-section__info {
+        font-size: 17px;
+    }
+    .main-field__row, .buy-input-label {
+        font-size: 17px;
     }
     .popular__header-border {
         top: 58px;
@@ -2581,5 +2776,14 @@ body.noscroll {
         font-size: 17px;
         background-size: 150px 41px;
         transition: none;
+    }
+}
+
+@media screen and (max-width: 550px) { 
+    .store-form__description-inner {
+        left: 5px;
+    }
+    .store-form__percent-inner {
+        right: 5px;
     }
 }

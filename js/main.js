@@ -72,6 +72,12 @@ document.querySelectorAll(".return-button").forEach((el)=>{
         document.getElementById("modal-login").classList.add("active");
     });
 });
+
+document.querySelector(".none-balance-button").addEventListener("click", ()=> {
+    document.getElementById("modal-none-balance").classList.remove("active");
+    document.getElementById("modal-balance").classList.add("active");
+})
+
 let timerEmail;
 document.querySelector(".remind__password-modal .modal-button.check").addEventListener("click", () => {
     // Если почта не найдена, то
