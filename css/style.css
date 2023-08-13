@@ -2468,6 +2468,13 @@ body.noscroll {
 }
 
 @media screen and (max-width: 750px) {
+    .wrapper {
+        background-image: url(../images/wrapper-bg.png);
+        background-size: 100%;
+    }
+    #particles-js {
+        display: none;
+    }
     .header.bg {
         background-image: none;
         padding: 0 20px 40px 20px;
