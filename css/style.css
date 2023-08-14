@@ -396,7 +396,7 @@ body.noscroll {
     flex-direction: column;
     gap: 12px;
     cursor: pointer;
-    transition: 170ms ease-in;
+    transition: transform 170ms ease-in;
 
 }
 .account-card.non-skew-cards:hover {
@@ -3075,8 +3075,59 @@ body.noscroll {
         padding: 0;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
-        padding: 30px 0 55px 0;
+        gap: 10px 0;
+        padding: 10px 0 55px 0;
+    }
+    .account-card {
+        min-width: 165px;
+        min-height: 205px;
+        padding-top: 48px;
+        gap: 8px;
+        transition: none;    
+    }
+    .account-card__icon {
+        transform: scale(0.7);
+        top: -8px;
+        right: -8px;
+    }
+    .account-card__count {
+        top: 17px;
+        left: 16px;
+        width: 70px;
+        text-align: right;
+    }
+    .account-card__price {
+        bottom: 17px;
+        left: 70px;
+        width: 60px;
+        text-align: center;
+    }
+    .account-card.green-bg {
+        background-image: url(../images/greencard-mobile.png);
+    }
+    .account-card.orange-bg {
+        background-image: url(../images/orangecard-mobile.png);
+    }
+    .account-card.purple-bg {
+        background-image: url(../images/purplecard-mobile.png);
+    }
+    .account-card.pink-bg {
+        background-image: url(../images/pinkcard-mobile.png);
+    }
+    .account-card.sky-bg {
+        background-image: url(../images/skycard-mobile.png);
+    }
+    .account-card.red-bg {
+        background-image: url(../images/redcard-mobile.png);
+    }
+    .account-card.salat-bg {
+        background-image: url(../images/salatcard-mobile.png);
+    }
+    .account-card.blue-bg {
+        background-image: url(../images/redcard-mobile.png);
+    }
+    .account-card.none-bg {
+        background-image: url(../images/nonecard.png);
     }
     .account-card.non-skew-cards {
         transform: none;
