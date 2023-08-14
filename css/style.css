@@ -3219,7 +3219,13 @@ body.noscroll {
         margin: 0;
     }
     .modal-registration {
-        margin-top: -40px;
+        margin-top: -50px;
+    }
+    .modal-log-in {
+        margin-top: -30px;
+    }
+    .modal-button, .modal__change-button {        
+        font-size: 17px;
     }
     .modal-registration .modal-button {
         position: relative;
@@ -3235,13 +3241,14 @@ body.noscroll {
     }
     .modal-log-in .modal__change-button {
         position: relative;
-        top: 70px;
+        top: 75px;
     }
     .repeat-button {
         white-space: nowrap;
     }
     .clicked-button {
         margin-bottom: 10px;
+        font-size: 17px;
     }
     .repeat-button {
         margin-top: 10px;
@@ -3251,6 +3258,10 @@ body.noscroll {
     }
     .error-modal {
         margin-top: 20px;
+        font-size: 17px;
+    }
+    .remind-pass {
+        margin: -10px -10px 20px 0;
     }
 }
 
