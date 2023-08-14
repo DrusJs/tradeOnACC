@@ -1503,6 +1503,13 @@ body.noscroll {
     align-items: center;
     gap: 15px;
 }
+.history-table .row .cell:nth-child(4),
+.promo-table .row .cell:nth-child(5) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+}
 .history-table .row.head,
 .promo-table .row.head  {
     height: 60px;
@@ -1559,7 +1566,7 @@ body.noscroll {
     border: 0;
     padding: 10px;
 }
-.dot-accept::before {
+.dot-accept::after {
     content: "";
     width: 14px;
     height: 14px;
@@ -1568,7 +1575,7 @@ body.noscroll {
     margin-right: 10px;
     display: inline-block;
 }
-.dot-refuse::before {
+.dot-refuse::after {
     content: "";
     width: 14px;
     height: 14px;
@@ -2598,6 +2605,133 @@ body.noscroll {
     }
     .referal-accordion {
         padding: 0 20px;
+    }
+    .history-table .table-body, .promo-table .table-body {
+        max-height: none;
+        padding: 10px 0;
+    }
+    .history-table .row .cell,
+    .promo-table .row .cell {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 17px;
+        position: relative;
+        gap: 3px;
+    }
+    .history-table .row .cell:nth-child(4),
+    .promo-table .row .cell:nth-child(5){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .history-table .table-body,
+    .promo-table .table-body {
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        gap: 30px;
+        padding: 15px 50px;
+    }
+    .history-table .row.head,
+    .promo-table .row.head {
+        display: none;
+    }
+    .history-table .row .cell:last-child {
+        gap: 6px;
+    }
+    .history-table .row,
+    .promo-table .row {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 8px;
+        min-width: 210px;
+        flex-basis: 210px;
+        background-image: url(../images/table-profile-cell-bg.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding: 25px 30px;
+        filter: drop-shadow(0px 0px 6px #01C9FF);
+    }
+    .history-table .row .cell::before,
+    .promo-table .row .cell::before {
+        font-size: 17px;
+        color: #818591;
+        font-family: var(--font-play-bold);
+        text-align: center;
+        position: relative;
+    }
+    .history-table .row .cell:nth-child(1)::before {
+        content: "Название";
+    }
+    .history-table .row .cell:nth-child(2)::before {
+        content: "Дата";
+    }
+    .history-table .row .cell:nth-child(3)::before{
+        content: "ID заказа";
+    }
+    .history-table .row .cell:nth-child(4)::before {
+        content: "Статус";
+    }
+    .history-table .row .cell:nth-child(5)::before {
+        content: "Кол-во";
+    }
+    .history-table .row .cell:nth-child(6)::before {
+        content: "Сумма";
+    }
+    .promo-table .row .cell:nth-child(1)::before {
+        content: "Название";
+    }
+    .promo-table .row .cell:nth-child(2)::before {
+        content: "Промокод";
+    }
+    .promo-table .row .cell:nth-child(3)::before{
+        content: "Дата";
+    }
+    .promo-table .row .cell:nth-child(4)::before {
+        content: "ID";
+    }
+    .promo-table .row .cell:nth-child(5)::before {
+        content: "Статус";
+    }
+    .promo-table .row .cell:nth-child(6)::before {
+        content: "Функция промо";
+    }
+
+    .promo-table .row .cell:nth-child(1) {
+        width: auto;
+        text-align: center;
+    }
+    .promo-table .row .cell:nth-child(2) {
+        width: auto;
+        text-align: center;
+    }
+    .promo-table .row .cell:nth-child(3) {
+        width: auto;
+        text-align: center;
+    }
+    .promo-table .row .cell:nth-child(5) {
+        width: auto;
+        text-align: center;
+    }
+    .promo-table .row .cell:nth-child(6) {
+        width: auto;
+        text-align: center;
+    }
+
+    .dot-accept::after {
+        position: absolute;
+        left: -20px;
+        bottom: 3px;
+    }
+    .dot-refuse::after {
+        position: absolute;
+        left: -20px;
+        bottom: 3px;
     }
 }
 @media screen and (max-width: 980px) {
