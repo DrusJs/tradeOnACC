@@ -2511,6 +2511,17 @@ body.noscroll {
         top: -56px;
         z-index: -1;
     }
+    .modal-container-bg.modal-accounts {
+        width: 980px;
+    }
+    .modal-accounts .modal-containe {
+        background-image: url(../images/modal-accounts-media.svg);
+        width: 980px;
+        margin: 0 auto;
+    }
+    .modal-accounts p {
+        width: 394px;
+    }
 }
 @media screen and (max-width: 1150px) {
     .profile-container {
@@ -2743,6 +2754,9 @@ body.noscroll {
     .header {        
         padding: 0 20px 30px 20px;
     }
+    .modal-wrapper {
+        background-color: rgba(0, 0, 0, .7);
+    }
     .auth {
         flex-direction: row-reverse;
     }
@@ -2801,6 +2815,65 @@ body.noscroll {
         font-size: 15px;
     }
 
+    .modal-container-bg.modal-accounts {
+        width: 400px;
+        overflow-y: scroll;
+    }
+    .modal-accounts .modal-close {
+        top: -30px;
+        right: 0px;
+    }
+    .modal-accounts .modal-containe {
+        background-image: none;
+        width: 400px;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: scroll;
+        gap: 18px;
+        padding: 14px 0;
+    }
+    .modal-account-check, .modal-account-review, .modal-account-instruction {
+        background-image: url(../images/modal-accounts-mobile.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        flex-wrap: nowrap;
+        width: 360px;
+        height: 268px;
+        padding-top: 15px;
+    }
+    .modal-accounts h3 {
+        font-size: 17px;
+    }
+    .modal-account-instruction h3{
+       display: none;
+    }
+    .modal-account-instruction {
+        background-image: url(../images/modal-instruction-mobile.svg);
+        height: 200px;
+    }
+    .modal-accounts p {
+        width: 310px;
+        font-size: 16px;
+    }
+    .modal-accounts li {
+        font-size: 16px;
+    }
+    .modal-accounts .gradient::before {
+        display: none;
+    }
+    .modal-account-download {
+        margin: 10px auto;
+        filter: drop-shadow(0px 0px 2px #01C9FF);
+        background-image: url(../images/modal-download-mobile.svg);
+        width: 242px;
+        height: 108px;
+    }
+    .modal-account-download img{
+        transform: scale(0.5);
+        margin: -10px 0 -30px 0;
+    }
 }
 
 @media screen and (max-width: 750px) {
@@ -2873,6 +2946,7 @@ body.noscroll {
         background-image: url(../images/modal-balance-button-mobile.svg);
         width: 180px;
         height: 42px;
+        margin-top: 32px;
     }
     .none-balance-header {
         font-size: 20px;
@@ -3228,9 +3302,7 @@ body.noscroll {
     .referal-accordion.active {
         height: 500px;
     }
-    .modal-wrapper {
-        background-color: rgba(0, 0, 0, .7);
-    }
+
     .modal-registration {
         max-width: 290px;
         height: 485px;

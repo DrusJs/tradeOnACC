@@ -72,39 +72,18 @@ if (document.querySelector(".modal-wrapper")) {
             document.getElementById("modal-login").classList.add("active");
         });
     });
+    if (document.querySelector(".none-balance-button")) {
+        document.querySelector(".none-balance-button").addEventListener("click", ()=> {
+            document.getElementById("modal-none-balance").classList.remove("active");
+            document.getElementById("modal-balance").classList.add("active");
+        })
 
-    document.querySelector(".none-balance-button").addEventListener("click", ()=> {
-        document.getElementById("modal-none-balance").classList.remove("active");
-        document.getElementById("modal-balance").classList.add("active");
-    })
-
-    let timerEmail;
-    document.querySelector(".remind__password-modal .modal-button.check").addEventListener("click", () => {
-        // Если почта не найдена, то
-        // document.querySelector(".remind__password-modal").classList.add("error"); return;
-        document.querySelector(".remind__password-modal").classList.add("accept");
-        document.querySelector(".repeat-button").classList.add("await");
-        document.querySelector(".timeline-modal").innerHTML = "4:59";
-        let timeMinut = 298;
-        timerEmail = setInterval(function () {
-            seconds = timeMinut%60;
-            minuts = timeMinut/60%60;
-            if (timeMinut < 1) {
-                document.querySelector(".timeline-modal").innerHTML = "0:00";
-                clearInterval(timerEmail);
-                document.querySelector(".repeat-button").classList.remove("await");
-            } else {
-                seconds = seconds>9?seconds:"0"+seconds;
-                let strTimer = `${Math.trunc(minuts)}:${seconds}`;
-                document.querySelector(".timeline-modal").innerHTML = strTimer;
-            }
-            --timeMinut;
-        }, 1000)
-    });
-    document.querySelector(".repeat-button").addEventListener("click", (el) => {
-        if (document.querySelector(".timeline-modal").innerHTML == "0:00"){
+        let timerEmail;
+        document.querySelector(".remind__password-modal .modal-button.check").addEventListener("click", () => {
+            // Если почта не найдена, то
+            // document.querySelector(".remind__password-modal").classList.add("error"); return;
+            document.querySelector(".remind__password-modal").classList.add("accept");
             document.querySelector(".repeat-button").classList.add("await");
-            clearInterval(timerEmail);
             document.querySelector(".timeline-modal").innerHTML = "4:59";
             let timeMinut = 298;
             timerEmail = setInterval(function () {
@@ -121,8 +100,30 @@ if (document.querySelector(".modal-wrapper")) {
                 }
                 --timeMinut;
             }, 1000)
-        }
-    })
+        });
+        document.querySelector(".repeat-button").addEventListener("click", (el) => {
+            if (document.querySelector(".timeline-modal").innerHTML == "0:00"){
+                document.querySelector(".repeat-button").classList.add("await");
+                clearInterval(timerEmail);
+                document.querySelector(".timeline-modal").innerHTML = "4:59";
+                let timeMinut = 298;
+                timerEmail = setInterval(function () {
+                    seconds = timeMinut%60;
+                    minuts = timeMinut/60%60;
+                    if (timeMinut < 1) {
+                        document.querySelector(".timeline-modal").innerHTML = "0:00";
+                        clearInterval(timerEmail);
+                        document.querySelector(".repeat-button").classList.remove("await");
+                    } else {
+                        seconds = seconds>9?seconds:"0"+seconds;
+                        let strTimer = `${Math.trunc(minuts)}:${seconds}`;
+                        document.querySelector(".timeline-modal").innerHTML = strTimer;
+                    }
+                    --timeMinut;
+                }, 1000)
+            }
+        })
+    }
 }
 /////////////////////
 /////modals.END//////
