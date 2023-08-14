@@ -3192,4 +3192,9 @@ body.noscroll {
     .referal-accordion {
         font-size: 12px;
     }
+    .referal-table-head {
+        padding-left: 40px;
+        width: 340px;
+        height: 171px;
+    }
 }
