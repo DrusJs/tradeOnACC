@@ -1665,12 +1665,21 @@ body.noscroll {
 }
 .accordion-row,
 .accordion-header {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     align-items: center;
     width: 100%;
     text-align: center;
-    padding: 16px 0;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+.accordion-item {
+    flex-basis: 24%;
+    line-height: 1.5;
+}
+.accordion-row .accordion-item {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .accordion-body .accordion-row:nth-child(odd) {
     background-color: #061535;
@@ -2433,6 +2442,11 @@ body.noscroll {
     }
     
 }
+@media screen and (max-width: 1450px) {
+    .profile-info .profile-info__content:nth-child(2) {
+        margin-left: 0px;
+      }    
+}
 @media screen and (max-width: 1260px) {
     .header{        
         padding: 0 60px 30px 60px;
@@ -2447,8 +2461,124 @@ body.noscroll {
     .footer__border-gradient {
         padding: 35px 50px 0 50px;
     }
+    .profile-container__bg {
+        display: none;
+    }
+    .referal-accordion, .referal-accordion.active {
+        position: relative;
+        margin-left: 0;
+        margin-right: 0;
+        background-image: linear-gradient(180deg, #040C20 0%, #061536 100%);        
+        filter: drop-shadow(0px 0px 6px #01C9FF);
+    }
+    .profile-table {
+        margin-left: 0px;
+    }
+    .gradient-border {
+        height: 4px;
+        width: 100%;
+        background-image: var(--linear-gradient-main);
+        position: absolute;
+    }
+    .gradient-border.top{
+        top: 0;
+        left: 0;
+        box-shadow: 0px 3px 0px #040C20;
+    }
+    .gradient-border.bottom{
+        bottom: 0;
+        left: 0;
+    }
+    .profile-container {
+        background-image: linear-gradient(180deg, #040C20 0%, #061536 100%);        
+        box-shadow: 0px 0px 15px #01C9FF;
+    }
+    .profile-title {
+        background-image: url(../images/review-users-mobile.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 370px;
+        text-align: center;
+        padding: 20px 0 10px 0;
+        position: absolute;
+        top: -56px;
+        z-index: -1;
+    }
 }
 @media screen and (max-width: 1150px) {
+    .profile-container {
+        padding: 4px 100px;
+        height: auto;
+    }
+    .profile-info {
+        margin-top: 50px;
+        padding-left: 0px;
+        margin-right: 0px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .profile-info .profile-info__content {
+        width: 50%;
+        text-align: center;
+        white-space: nowrap;
+    }
+    .profile-info .profile-info__content:nth-child(3) {
+        width: auto;
+        text-align: center;
+        margin-top: 25px;
+    }
+    .profile-balance {
+        white-space: nowrap;
+    }
+    .profile-table {
+        margin-top: 30px;
+    }
+    .profile-table__header {
+        background-image: url(../images/profile-nav-mobile.png);
+        width: 260px;
+        height: 167px;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 15px 0 2px;
+        margin: 0 auto;
+        gap: 20px;
+    }
+    .profile-table__body, .profile-table__body.center {
+        background: none;
+        height: auto;
+    }
+    .referal-table-head {
+        background-image: url(../images/referal-block-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: flex-start;
+        padding-left: 60px;
+        gap: 12px;
+        width: 360px;
+        height: 181px;
+    }
+    .referal-list {
+        width: 90vw;
+        padding: 0 15px;
+        margin: 35px auto;
+    }
+    .referal-list-point {
+        width: 41px;
+        height: 46px;
+    }
+    .referal-table-item {
+        text-align: left;
+        flex-direction: row;   
+        font-size: 17px;
+        height: auto; 
+    }
+    .referal-table-title {
+        text-align: left;
+        font-size: 17px;
+    }
     .store-form {
         margin: 50px 0 260px 0;
         position: relative;
@@ -2466,6 +2596,9 @@ body.noscroll {
         right: 40px;        
         margin-top: 0px;
     }
+    .referal-accordion {
+        padding: 0 20px;
+    }
 }
 @media screen and (max-width: 980px) {
     .header {        
@@ -2482,6 +2615,9 @@ body.noscroll {
     }
     .navigation, .logo {
         display: none;
+    }
+    .referal-accordion {
+        font-size: 14px;
     }
     .instructions {
         flex-direction: column;
@@ -2522,12 +2658,49 @@ body.noscroll {
         flex-direction: column;
         gap: 50px;
     }
+    .referal-list-text {
+        font-size: 15px;
+    }
+
 }
 
 @media screen and (max-width: 750px) {
     .wrapper {
         background-image: url(../images/wrapper-bg.png);
         background-size: 100%;
+    }
+    .profile-info {
+        justify-content: space-between;
+    }
+    .profile-title {
+        width: 255px;
+        padding: 15px 0 10px 0;
+        top: -40px;
+    }
+    .profile-title, .profile-info__content, .profile-table__header {
+        font-size: 17px;
+    }
+    .profile-info .profile-info__content {
+        width: auto;
+    }
+    .profile-info .profile-info__content:nth-child(3) {
+        text-align: center;        
+        flex-basis: 100%;
+    }
+    .profile-balance {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 30px; 
+        padding: 0 20%;       
+    }
+    .profile-container {
+        padding: 4px 25px;
+    }
+    .profile-info .profile-info__content:nth-child(1) {
+        text-align: left;
+    }
+    .profile-info .profile-info__content:nth-child(1) .profile-info__value {
+        text-align: left;
     }
     #particles-js {
         display: none;
@@ -2857,11 +3030,21 @@ body.noscroll {
     }
 }
 
-@media screen and (max-width: 550px) { 
+@media screen and (max-width: 550px) {
+    .deposit-button {
+        margin: 0;
+    }
+    .profile-balance {
+        flex-basis: 100%;
+        padding: 0 13%;
+    }
     .store-form__description-inner {
         left: 5px;
     }
     .store-form__percent-inner {
         right: 5px;
+    }
+    .referal-accordion {
+        font-size: 12px;
     }
 }
