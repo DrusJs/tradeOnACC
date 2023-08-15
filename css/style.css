@@ -1019,6 +1019,11 @@ body.noscroll {
     color: #AEAEAE; 
     cursor: default;
 }
+.main-accept__price .currency {
+    margin-left: 7px;
+}
+.number-animate {
+}
 .main-accept__button {
     width: 160px;
     height: 60px;
@@ -3217,12 +3222,14 @@ body.noscroll {
     .store-section__block-svg .store-form__header {
         top: -35px;
         padding: 0;
-      }
+    }
     .store-section__block-svg {
         width: 400px;
-        height: 300px;
-        padding: 10px;
+        padding: 13px 10px 0 25px;
         margin-bottom: 50px;
+    }
+    .store-section__block-svg:nth-child(3) {
+        width: 1000000000px;
     }
     .block-svg__background {
         display: none;
@@ -3247,11 +3254,12 @@ body.noscroll {
         padding-top: 450px;
     }
     .store-section {
-        gap: 10px;
+        gap: 40px;
     }
     .store-section__header {
         font-size: 17px;
         margin-top: 25px;
+        margin-bottom: 10px;
     }
     .store-section__example {
         background-size: 292px 109px;

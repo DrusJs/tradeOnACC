@@ -153,10 +153,16 @@ if (document.querySelector(".buy-input .total")) {
 function setInputNumberAction() {
     accountTotal.previousElementSibling.addEventListener("click", ()=>{
         accountTotal.innerHTML = accountTotal.innerHTML=="0"?0:+accountTotal.innerHTML-50;
+        let multy = +accountTotal.innerHTML;
+        document.querySelector(".main-accept__price .number-animate").innerHTML = multy*10;
     });
     accountTotal.nextElementSibling.addEventListener("click", ()=>{
         accountTotal.innerHTML = accountTotal.innerHTML=="950"?950:+accountTotal.innerHTML+50;
+        let multy = +accountTotal.innerHTML;
+        document.querySelector(".main-accept__price .number-animate").innerHTML = multy*10;
     });
+    let multy = +accountTotal.innerHTML;
+    document.querySelector(".main-accept__price .number-animate").innerHTML = multy*10;
 }
 
 function Center(num, elem) {
