@@ -213,3 +213,11 @@ if (document.querySelector(".poligon-inner")) {
         }
     }
 }
+if (document.querySelector(".card-filter__list")) {
+    document.querySelectorAll(".card-filter__list").forEach((el=>{
+        el.addEventListener("click", (e)=>{
+            document.querySelector(".card-filter__list.active").classList.remove("active");
+            e.currentTarget.classList.add("active");
+        })
+    }))
+}
