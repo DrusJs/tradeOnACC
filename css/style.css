@@ -71,6 +71,11 @@ ol,
 li {
     list-style: none;
 }
+h1,h2,h3 {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;    
+}
 html,
 body {
     width: 100%;
@@ -397,10 +402,43 @@ body.noscroll {
     gap: 12px;
     cursor: pointer;
     transition: transform 170ms ease-in;
-
+}
+.account-card:hover .card-hover{
+    display: block;
+}
+.card-hover {
+    position: absolute;
+    display: none;
+    width: 900px;
+    height: 250px;
+    background-image: url(../images/card-description-hover.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 128px;
+    top: -55px;
+    z-index: 100;
+    padding: 40px 44px 20px 170px;
+    /* transform: scale(-1, 1); */
+}
+.card-hover-list {
+    /* transform: scale(-1, 1); */
+}
+.card-hover-list, .card-hover-list__item {
+    font-size: 20px;
+    font-family: var(--font-play-bold);
+    list-style:decimal inside;
+}
+.card-hover-list__item::marker {
+    color: #92FE9D;
 }
 .account-card.non-skew-cards:hover {
     transform: scale(1.06)  var(--skew-cards-block-back);
+    z-index: 10;
+}
+.scroll-container .account-card:hover {
+    transform: scale(1.06);
+    z-index: 10;
 }
 .account-card.small-gap {
     gap: 1px;
@@ -533,7 +571,7 @@ body.noscroll {
     background-image: var(--linear-gradient-main);
     transform: var(--skew-cards-block);
     position: relative;
-    width: 90%;
+    width: 98%;
 }
 .cards-section-bg::before {
     content: "";
@@ -551,7 +589,6 @@ body.noscroll {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    overflow-x: scroll;
     gap: 12px;
 }
 .card-filter__list {
@@ -915,6 +952,9 @@ body.noscroll {
     font-family: var(--font-play);
     font-size: 20px;
     cursor: default;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;    
 }
 .buy-input-label {
     font-family: var(--font-play-bold);
@@ -3016,11 +3056,10 @@ body.noscroll {
     }
     .store-section__block, .store-section__square {
         font-size: 15px;
-        width: 90%;
-        background-size: 100%;
-        padding: 20px 20px 0 30px;
+        width: 95%;
+        padding: 30px 20px;
         background-image: url(../images/store-section-block-mobile.svg);
-        background-size: contain;
+        background-size: 326px 400px;
         width: 326px;
         height: auto;
     }
@@ -3409,5 +3448,16 @@ body.noscroll {
         padding-left: 40px;
         width: 340px;
         height: 171px;
+    }
+}
+@media screen and (max-width: 389px) {
+    .store-form__main {
+        background-size: 340px 400px;
+    }
+    .store-form__description-inner {
+        left: -5px;
+    }
+    .store-form__percent-inner {
+        right: -5px;
     }
 }
