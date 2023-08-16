@@ -404,9 +404,6 @@ body.noscroll {
     cursor: pointer;
     transition: transform 170ms ease-in;
 }
-.account-card:hover .card-hover{
-    display: none;
-}
 .card-hover {
     position: absolute;
     display: none;
@@ -420,6 +417,13 @@ body.noscroll {
     top: -55px;
     z-index: 100;
     padding: 40px 44px 20px 170px;
+}
+.card-hover.small {
+    width: 577px;
+    height: 410px;
+    background-image: url(../images/card-hover-small.png);
+    z-index: 100;
+    padding: 30px 44px 20px 150px;
 }
 .card-hover.wrap {
     transform: scale(-1, 1);

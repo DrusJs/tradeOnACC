@@ -316,11 +316,17 @@ if (document.querySelector(".account-card")) {
                 let coords = el.getBoundingClientRect();                
                 let desc = document.querySelector(".card-hover");
                 if (+coords.left < window.innerWidth/2){
+                    if (+coords.left+900 > document.body.clientWidth) {
+                        desc.classList.add("small");
+                    }
                     desc.style.display = "block";
                     desc.style.top = (+coords.top+window.pageYOffset-56)+"px";
                     desc.style.left = (+coords.left+ window.pageXOffset+130)+"px";
                 } else {
-                    desc.classList.add("wrap");                    
+                    desc.classList.add("wrap");
+                    if (+coords.left < 900) {
+                        desc.classList.add("small");
+                    }                   
                     desc.style.display = "block";
                     desc.style.top = (+coords.top+window.pageYOffset-76)+"px";
                     desc.style.left = (+coords.left+ window.pageXOffset+33-desc.scrollWidth)+"px";
@@ -334,6 +340,7 @@ if (document.querySelector(".account-card")) {
                 let desc = document.querySelector(".card-hover");
                 desc.style.display = "none";
                 desc.classList.remove("wrap");
+                desc.classList.remove("small");
                 el.classList.remove("active");
             }
         })
