@@ -225,7 +225,7 @@ if (document.getElementsByClassName('number-ticker')){
         accountTotal.previousElementSibling.addEventListener("click", ()=>{
             accountTotal.innerHTML = +accountTotal.innerHTML<=0?0:+accountTotal.innerHTML-50;
             let multy = +accountTotal.innerHTML;
-            setValue(multy)*10;
+            setValue(multy*10);
             animateDiscount(+accountTotal.innerHTML);
         });
         accountTotal.nextElementSibling.addEventListener("click", ()=>{
@@ -245,7 +245,10 @@ if (document.getElementsByClassName('number-ticker')){
             if (l > digits.length) {
                 generateDigits(l - digits.length);
             }
-
+            
+            // if (l < digits.length) {
+            //     document.getElementsByClassName("digit")[0].remove();
+            // }
             for (var i = 0; i < digits.length; i++) {
                 setDigit(i, s[i] || 0);
             }
@@ -343,3 +346,11 @@ if (document.querySelector(".account-card")) {
     // })
 }
 
+if (document.querySelector(".method-bg")) {
+    document.querySelectorAll(".method-bg").forEach((el)=>{
+        el.addEventListener("click", ()=>{
+            document.querySelector(".method-bg.active").classList.remove("active");
+            el.classList.add("active");
+        })
+    })
+}

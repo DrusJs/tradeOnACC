@@ -384,36 +384,50 @@
             <input class="input-deposit" type="text">
             <p style="font-size: 18px;">Минимальная сумма пополнения: 100р</p>
             <div class="deposit__methods">
-                <div class="method active">
-                    <img src="images/icons/bitcoin.png" alt="">
-                    <span>Bitcoin</span>
+                <div class="method-bg active">
+                    <div class="method">
+                        <img src="images/icons/bitcoin.png" alt="">
+                        <span>Bitcoin</span>
+                    </div>
                 </div>
-                <div class="method">
-                    <img src="images/icons/ethereum.png" alt="">
-                    <span>Eth</span>
+                <div class="method-bg">
+                    <div class="method">
+                        <img src="images/icons/ethereum.png" alt="">
+                        <span>Eth</span>
+                    </div>
                 </div>
-                <div class="method">
-                    <img src="images/icons/tether.png" alt="">
-                    <span>
-                        Teher 
-                        <span class="low">TRC-20</span>
-                    </span>
+                <div class="method-bg">
+                    <div class="method">
+                        <img src="images/icons/tether.png" alt="">
+                        <span>
+                            Teher 
+                            <span class="low">TRC-20</span>
+                        </span>
+                    </div>
                 </div>
-                <div class="method">
-                    <img src="images/icons/bankcard.png" alt="">
-                    <span class="upper">4%</span>
+                <div class="method-bg">
+                    <div class="method">
+                        <img src="images/icons/bankcard.png" alt="">
+                        <span class="upper">4%</span>
+                    </div>
                 </div>
-                <div class="method">
-                    <img src="images/icons/qiwi.png" alt="">
-                    <span>QIWI</span>
+                <div class="method-bg">
+                    <div class="method">
+                        <img src="images/icons/qiwi.png" alt="">
+                        <span>QIWI</span>
+                    </div>
                 </div>
-                <div class="method">
-                    <img src="images/icons/yumoney.png" alt="">
-                    <span>Money</span>
+                <div class="method-bg">
+                    <div class="method">
+                        <img src="images/icons/yumoney.png" alt="">
+                        <span>Money</span>  
+                    </div>
                 </div>
-                <div class="method">
-                    <img src="images/icons/sberpay.png" alt="">
-                    <span>Pay</span>
+                <div class="method-bg">
+                    <div class="method">
+                        <img src="images/icons/sberpay.png" alt="">
+                        <span>Pay</span>
+                    </div>
                 </div>
             </div>
             <p>Введите контактные данные</p>
@@ -422,7 +436,7 @@
             <p>У вас есть промокод</p>
             <input class="input-balance-text" type="text" placeholder="Введите промокод">
             <p style="font-size: 14px;">бонус к пополнению 5%</p>
-            <button class="balance-button LightUp">Оплатить 0.00 р</button>
+            <button class="balance-button LightUp">Оплатить <span>0.00</span>р<div class="pulse top"></div><div class="pulse bottom"></div></button>
             
         </div>
     </div>
@@ -442,9 +456,11 @@
             <img class="modal-close" src="images/close-modal.svg" alt="">
             <img class="balance-header-bg" src="images/modal-balance-header.svg" alt="">            
             <h2 class="balance-header">Пополнение баланса</h2>
-            <div class="method active">
-                <img src="images/icons/bitcoin.png" alt="">
-                <span>Bitcoin</span>
+            <div class="method-bg active">
+                <div class="method">
+                    <img src="images/icons/bitcoin.png" alt="">
+                    <span>Bitcoin</span>
+                </div>
             </div>
             <p style="font-size: 18px;">Текущий курс 1 NAME = 123.123123₽</p>
             <p>Сумма пополнения</p>
@@ -452,7 +468,7 @@
             <p>Отправьте NAME(сеть)</p>
             <input class="input-network" type="text" value="0x12312312312312312312312312312">
             <button class="balance-refuse-button">Отменить</button>
-            <button class="balance-button LightUp">Оплатить 0.00 р</button>
+            <button class="balance-button LightUp">Оплатить <span>0.00</span>р<div class="pulse top"></div><div class="pulse bottom"></div></button>
             
         </div>
     </div>

@@ -990,6 +990,7 @@ body.noscroll {
     transform: scale(1.1);
     cursor: pointer;
     transition: 200ms ease-in-out;
+    margin-top: -2px;
 }
 .buy-input .plus {
     width: 16px;
@@ -999,16 +1000,13 @@ body.noscroll {
     background-position: center;
     transform: scale(1.1);
     cursor: pointer;
-    margin-top: -5px;
     transition: 200ms ease-in-out;
 }
 .buy-input .plus:hover {
-    transform: scale(1.5);
-    margin-top: 0;
+    background-image: url(../images/plus-hover.svg);    
 }
 .buy-input .minus:hover {
-    transform: scale(1.5);
-    margin-top: -8px;
+    background-image: url(../images/minus-hover.svg);    
 }
 
 .buy-input .total {
@@ -2159,19 +2157,26 @@ body.noscroll {
     justify-content: center;
     gap: 5px;    
     background-image: linear-gradient(180deg, #040C20 0%, #061536 100%);    
-    background-clip: padding-box;
     border-radius: 20px;
-    position: relative;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
+    padding: 2px 5px;
 }
-.method.active::after {
-    position: absolute;
-    top: -4px; bottom: -4px;
-    left: -4px; right: -4px;
-    background-image: var(--linear-gradient-main);
-    content: '';
+.method-bg {
+    padding: 2px;
     border-radius: 20px;
-    z-index: -1;
+    transition: 200ms ease-in-out;
+}
+.method-bg:hover {
+    filter: drop-shadow(0px 0px 5px #FFFFFF);
+}
+.method-bg.active:hover {
+    filter: none;
+}
+.method-bg.active {
+    background-image: var(--linear-gradient-main);
+    transition: none;
 } 
 .deposit__methods .method .low {
     font-size: 8px; 
@@ -2179,8 +2184,8 @@ body.noscroll {
 .deposit__methods .method .upper {
     font-size: 10px;
     position: absolute;
-    top: -5px;
-    right: -10px; 
+    top: 2px;
+    right: 5px; 
 }
 .input-deposit {
     width: 300px;
