@@ -363,3 +363,21 @@ if (document.querySelector(".method-bg")) {
         })
     })
 }
+if (document.querySelector(".review__card")) {
+    document.getElementsByClassName("review__card")[0].addEventListener("click", ()=>{
+        document.getElementById("modal-accounts").classList.add("active");
+        document.body.classList.add("noscroll");
+    })
+    document.getElementsByClassName("review__card")[1].addEventListener("click", ()=>{
+        document.getElementById("modal-balance").classList.add("active");
+        document.body.classList.add("noscroll");
+    })
+    document.getElementsByClassName("review__card")[2].addEventListener("click", ()=>{
+        document.getElementById("modal-none-balance").classList.add("active");
+        document.body.classList.add("noscroll");
+    })
+    document.getElementsByClassName("review__card")[3].addEventListener("click", ()=>{
+        document.getElementById("modal-balance-cript").classList.add("active");
+        document.body.classList.add("noscroll");
+    })
+}
