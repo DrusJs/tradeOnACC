@@ -3347,6 +3347,9 @@ body.noscroll {
     .modal__card-desc {
         max-width: 360px;
     }
+    .repeat-button {
+        font-size: 17px;
+    }
     .modal__card-desc .modal-close {
         right: 5px;
     }
