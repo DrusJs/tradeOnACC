@@ -2230,11 +2230,10 @@ body.noscroll {
     opacity: 0;
 }
 .balance-button {
-    width: 390px;
+    width: 394px;
     height: 48px;
     background-image: url(../images/modal-balance-button.svg);
     background-color: transparent;
-    background-size: cover; 
     background-repeat: no-repeat;
     background-position: center;
     filter: drop-shadow(0px 0px 8px #01C9FF);
@@ -2252,10 +2251,10 @@ body.noscroll {
 .none-balance-button::before{
     content: "";
     position: absolute;
-    top: -5px;
-    right: -5px;
-    bottom: -5px;
-    left: -5px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
     z-index: -1;
     background: linear-gradient(90deg, #03a9f4, #f441a5, #45F5B6, #03a9f4);
     background-size: auto;
@@ -2264,6 +2263,60 @@ body.noscroll {
     opacity: 0;
     transition: .5s;
 }
+.balance-button .pulse {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #01C9FF;
+    position: absolute;
+    filter: blur(3px);
+    opacity: 0;
+}
+.balance-button.animateBuy .pulse.top {
+    animation: balance-top 1s linear;
+    opacity: 1;
+}
+.balance-button.animateBuy .pulse.bottom {
+    animation: balance-bottom 1s linear;
+    opacity: 1;
+}
+
+@keyframes balance-top {
+    0% {
+      top: -2px;
+      left: 50%;
+    }
+    45% {                
+      top: -2px;
+      left: 97%;
+    }
+    55% {
+      top: 43px;
+      left: 97%;
+    }
+    100% {
+      top: 43px;
+      left: 50%;
+    }
+  }
+  @keyframes balance-bottom {
+    0% {
+      top: 0px;
+      left: 50%; 
+    }
+    45% {          
+      top: 0px;
+      left: 0px;
+    }
+    55%{          
+      top: 43px;
+      left: 0px;
+    }
+    100% {               
+      top: 43px;
+      left: 50%;
+    }
+  }
 .main-accept__button::before {
     content: "";
     position: absolute;
