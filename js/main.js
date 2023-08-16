@@ -2,19 +2,19 @@
 ////////burger///////
 /////////////////////
 if (document.getElementById("burger-button")) {
-const burgerButton = document.getElementById("burger-button");
-const popupMenu = document.getElementById("popup-menu");
+    const burgerButton = document.getElementById("burger-button");
+    const popupMenu = document.getElementById("popup-menu");
 
-burgerButton.addEventListener("click", ()=>{
-    burgerButton.classList.toggle("active");
-    if (burgerButton.classList.contains("active")) {
-        popupMenu.classList.add("active");
-        document.body.classList.add("noscroll");
-    } else {
-        popupMenu.classList.remove("active");
-        document.body.classList.remove("noscroll");
-    }
-});
+    burgerButton.addEventListener("click", ()=>{
+        burgerButton.classList.toggle("active");
+        if (burgerButton.classList.contains("active")) {
+            popupMenu.classList.add("active");
+            document.body.classList.add("noscroll");
+        } else {
+            popupMenu.classList.remove("active");
+            document.body.classList.remove("noscroll");
+        }
+    });
 }
 /////////////////////
 ////////modals///////
@@ -145,23 +145,6 @@ if (document.querySelector(".animone")) {
             document.querySelector(".animthree").classList.remove("animthree");
     }, 1300);
 }
-if (document.querySelector(".buy-input .total")) {
-    var accountTotal = document.querySelector(".buy-input .total");
-    setInputNumberAction()
-} 
-
-function setInputNumberAction() {
-    // accountTotal.previousElementSibling.addEventListener("click", ()=>{
-    //     accountTotal.innerHTML = accountTotal.innerHTML=="0"?0:+accountTotal.innerHTML-50;
-    //     let multy = +accountTotal.innerHTML;
-    //     setValue(multy*10);
-    // });
-    // accountTotal.nextElementSibling.addEventListener("click", ()=>{
-    //     accountTotal.innerHTML = accountTotal.innerHTML=="950"?950:+accountTotal.innerHTML+50;
-    //     let multy = +accountTotal.innerHTML;
-    //     setValue(multy*10);
-    // });
-}
 
 function Center(num, elem) {
     document.querySelector(".profile-table__body").classList.add("center");
@@ -192,10 +175,14 @@ function CenterNoPromo(num, elem) {
 }
 //input-poligon
 if (document.querySelector(".poligon-inner")) {
-    if (document.querySelector(".poligon-inner").value) {
-        document.querySelector(".poligon-inner").nextElementSibling.classList.add("non-empty")
-    }
-    document.querySelector(".pulses").addEventListener("animationend", animEnd);
+    document.querySelectorAll(".poligon-inner").forEach((el)=>{
+        if (el.value) {
+            el.nextElementSibling.classList.add("non-empty")
+        }
+    })
+    document.querySelectorAll(".pulses").forEach((el)=>{
+        el.addEventListener("animationend", ()=>{el.classList.remove("animate")});
+    })
     function checkInput(elem) {
         if (elem.value) {
             elem.nextElementSibling.classList.add("non-empty");
@@ -203,12 +190,9 @@ if (document.querySelector(".poligon-inner")) {
             elem.nextElementSibling.classList.remove("non-empty");
         }
     }
-    function animEnd() {
-        document.querySelector(".pulses").classList.remove("animate");
-    }
-    function Pulse() {
-        if (!document.querySelector(".poligon-inner").value) {return;}
-        let elem = document.querySelector(".pulses")
+    function Pulse(el) {
+        if (!el.previousElementSibling.value) {return;}
+        let elem = el.parentElement.parentElement;
         if (elem.classList.contains("animate")) {
             elem.classList.remove("animate");
             setTimeout(()=>{elem.classList.add("animate")}, 5)
@@ -225,54 +209,109 @@ if (document.querySelector(".card-filter__list")) {
         })
     }))
 }
+if (document.getElementsByClassName('number-ticker')){
+    var accountTotal = document.querySelector(".buy-input .total");
+    var counters = document.getElementsByClassName('number-ticker');
+    var defaultDigitNode = document.createElement('div');
+    defaultDigitNode.classList.add('digit');
 
-var counters = document.getElementsByClassName('number-ticker');
-var defaultDigitNode = document.createElement('div');
-defaultDigitNode.classList.add('digit');
+    for (var i = 0; i < 10; i++) {
+        defaultDigitNode.innerHTML += i + '<br>';
+    }
 
-for (var i = 0; i < 10; i++) {
-    defaultDigitNode.innerHTML += i + '<br>';
+    [].forEach.call(counters, function (counter) {
+        var currentValue = parseInt(counter.getAttribute('data-value')) || 0;
+        var digits = [];
+        accountTotal.previousElementSibling.addEventListener("click", ()=>{
+            accountTotal.innerHTML = +accountTotal.innerHTML<=0?0:+accountTotal.innerHTML-50;
+            let multy = +accountTotal.innerHTML;
+            setValue(multy)*10;
+            animateDiscount(+accountTotal.innerHTML);
+        });
+        accountTotal.nextElementSibling.addEventListener("click", ()=>{
+            accountTotal.innerHTML = +accountTotal.innerHTML==950?950:+accountTotal.innerHTML+50;
+            let multy = +accountTotal.innerHTML;
+            setValue(multy*10);
+            animateDiscount(+accountTotal.innerHTML);
+        });
+        generateDigits(currentValue.toString().length);
+        setValue(1500);
+
+
+        function setValue (number) {
+            var s = number.toString().split('').reverse().join('');
+            var l = s.length;
+
+            if (l > digits.length) {
+                generateDigits(l - digits.length);
+            }
+
+            for (var i = 0; i < digits.length; i++) {
+                setDigit(i, s[i] || 0);
+            }
+        }
+
+        function setDigit (digitIndex, number) {
+            digits[digitIndex].style.marginTop = '-' + number + 'em';
+        }
+
+        function generateDigits (amount) {
+            for (var i = 0; i < amount; i++) {
+                var d = defaultDigitNode.cloneNode(true);
+                counter.appendChild(d);
+                digits.unshift(d);
+            }
+        }
+
+        function animateDiscount(total) {
+            document.querySelector(".store-form__percent-list.active").classList.remove("active");
+            if (+total >= 500) {
+                document.getElementsByClassName("store-form__percent-list")[3].classList.add("active");
+            } else if (+total >= 100){
+                document.getElementsByClassName("store-form__percent-list")[2].classList.add("active");
+            } else if (+total >= 50) {
+                document.getElementsByClassName("store-form__percent-list")[1].classList.add("active");
+            } else {
+                document.getElementsByClassName("store-form__percent-list")[0].classList.add("active");
+            }
+        }
+    });
+}
+if (document.querySelector(".account-card")) {
+    document.querySelectorAll(".cards-section .account-card").forEach((el)=>{
+        el.addEventListener("mouseenter", ()=>{
+            console.log(window.matchMedia("(min-width: 1150px)").matches);
+            if (window.matchMedia("(min-width: 1150px)").matches){
+                let coords = el.getBoundingClientRect();                
+                let desc = document.querySelector(".card-hover");
+                if (+coords.left < window.innerWidth/2){
+                    desc.style.display = "block";
+                    desc.style.top = (+coords.top+window.pageYOffset-56)+"px";
+                    desc.style.left = (+coords.left+ window.pageXOffset+130)+"px";
+                } else {
+                    desc.classList.add("wrap");                    
+                    desc.style.display = "block";
+                    desc.style.top = (+coords.top+window.pageYOffset-76)+"px";
+                    desc.style.left = (+coords.left+ window.pageXOffset+33-desc.scrollWidth)+"px";
+                }
+            }
+        })
+    })
+    document.querySelectorAll(".cards-section .account-card").forEach((el)=>{
+        el.addEventListener("mouseleave", ()=>{            
+            if (window.matchMedia("(min-width: 1150px)").matches){   
+                let desc = document.querySelector(".card-hover");
+                desc.style.display = "none";
+                desc.classList.remove("wrap");
+                el.classList.remove("active");
+            }
+        })
+    })
+    // document.querySelectorAll(".account-card").forEach((el)=>{
+    //     el.addEventListener("click", (e)=>{
+    //         document.getElementById("modal").classList.add("active");
+    //         document.body.classList.add("noscroll");
+    //     })
+    // })
 }
 
-[].forEach.call(counters, function (counter) {
-    var currentValue = parseInt(counter.getAttribute('data-value')) || 0;
-    var digits = [];
-    accountTotal.previousElementSibling.addEventListener("click", ()=>{
-        accountTotal.innerHTML = accountTotal.innerHTML=="0"?0:+accountTotal.innerHTML-50;
-        let multy = +accountTotal.innerHTML;
-        setValue(multy*10);
-    });
-    accountTotal.nextElementSibling.addEventListener("click", ()=>{
-        accountTotal.innerHTML = accountTotal.innerHTML=="950"?950:+accountTotal.innerHTML+50;
-        let multy = +accountTotal.innerHTML;
-        setValue(multy*10);
-    });
-    generateDigits(currentValue.toString().length);
-    setValue(1500);
-
-
-    function setValue (number) {
-        var s = number.toString().split('').reverse().join('');
-        var l = s.length;
-
-        if (l > digits.length) {
-            generateDigits(l - digits.length);
-        }
-
-        for (var i = 0; i < digits.length; i++) {
-            setDigit(i, s[i] || 0);
-        }
-    }
-
-    function setDigit (digitIndex, number) {
-        digits[digitIndex].style.marginTop = '-' + number + 'em';
-    }
-
-    function generateDigits (amount) {
-        for (var i = 0; i < amount; i++) {
-            var d = defaultDigitNode.cloneNode(true);
-            counter.appendChild(d);
-            digits.unshift(d);
-        }
-    }
-});
