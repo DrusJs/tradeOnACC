@@ -316,7 +316,7 @@ if (document.querySelector(".account-card")) {
                 let coords = el.getBoundingClientRect();                
                 let desc = document.querySelector(".card-hover");
                 if (+coords.left < window.innerWidth/2){
-                    if (+coords.left+900 > document.body.clientWidth) {
+                    if (+coords.left+ 950 > document.body.clientWidth) {
                         desc.classList.add("small");
                     }
                     desc.style.display = "block";
@@ -324,7 +324,7 @@ if (document.querySelector(".account-card")) {
                     desc.style.left = (+coords.left+ window.pageXOffset+130)+"px";
                 } else {
                     desc.classList.add("wrap");
-                    if (+coords.left < 900) {
+                    if (+coords.left < 950) {
                         desc.classList.add("small");
                     }                   
                     desc.style.display = "block";
@@ -345,12 +345,14 @@ if (document.querySelector(".account-card")) {
             }
         })
     })
-    // document.querySelectorAll(".account-card").forEach((el)=>{
-    //     el.addEventListener("click", (e)=>{
-    //         document.getElementById("modal").classList.add("active");
-    //         document.body.classList.add("noscroll");
-    //     })
-    // })
+    document.querySelectorAll(".account-card").forEach((el)=>{
+        el.addEventListener("click", (e)=>{
+            if (window.matchMedia("(max-width: 1150px)").matches){
+                document.getElementById("modal-card-desc").classList.add("active");
+                document.body.classList.add("noscroll");
+            }
+        })
+    })
 }
 
 if (document.querySelector(".method-bg")) {

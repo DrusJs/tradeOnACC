@@ -2526,7 +2526,17 @@ body.noscroll {
     margin-bottom: 8px;
     display: block;
 }
-
+.modal__card-desc {
+    max-width: 500px;
+    padding: 20px;
+    position: relative;
+}
+.modal__card-desc .modal-close {
+    display: block;
+    top: -40px;
+    right: -20px;
+    position: absolute;
+}
 .modal-registration {
     max-width: 470px;
     height: 756px;
@@ -3333,6 +3343,12 @@ body.noscroll {
     .wrapper {
         background-image: url(../images/wrapper-bg.png);
         background-size: 100%;
+    }
+    .modal__card-desc {
+        max-width: 360px;
+    }
+    .modal__card-desc .modal-close {
+        right: 5px;
     }
     .review__card-desc {
         max-height: 115px;
