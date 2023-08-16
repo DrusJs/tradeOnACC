@@ -1044,8 +1044,6 @@ body.noscroll {
 .main-accept__price .currency {
     margin-left: 7px;
 }
-.number-animate {
-}
 .main-accept__button {
     width: 160px;
     height: 60px;
@@ -1059,8 +1057,66 @@ body.noscroll {
     padding: 17px 0 0 0;
     position: relative;
     cursor: pointer;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;  
     transition: 500ms ease-in-out;
 }
+
+.main-accept__button .pulse {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #01C9FF;
+    position: absolute;
+    filter: blur(5px);
+    opacity: 0;
+}
+.main-accept__button.animateBuy .pulse.top {
+    animation: main-top 0.8s linear;
+    opacity: 1;
+}
+.main-accept__button.animateBuy .pulse.bottom {
+    animation: main-bottom 0.8s linear;
+    opacity: 1;
+}
+
+@keyframes main-top {
+    0% {
+      top: 5px;
+      left: 50%;
+    }
+    40% {                
+      top: 5px;
+      left: 87%;
+    }
+    60% {
+      top: 44px;
+      left: 87%;
+    }
+    100% {
+      top: 44px;
+      left: 50%;
+    }
+  }
+  @keyframes main-bottom {
+    0% {
+      top: 5px;
+      left: 50%; 
+    }
+    40% {          
+      top: 5px;
+      left: 10px;
+    }
+    60%{          
+      top: 44px;
+      left: 10px;
+    }
+    100% {               
+      top: 44px;
+      left: 50%;
+    }
+  }
 .main-accept__percents {
     color: #FF7A00;
     font-family: var(--font-play);
@@ -1284,55 +1340,7 @@ body.noscroll {
 .pulse-animation {
     position: relative;
 }
-/*animate pulse*/
-.pulse-animation:before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(90deg,#00C9FF 0%,rgba(0,0,0,0) 5%,rgba(0,0,0,0) 15%,rgba(0,0,0,0) 100%);
-    background-size: 600px;
-    background-position: 600px 0;
-    background-repeat: no-repeat;
-    opacity: 1;
-    transition: 0.5s;            
-    border-radius: 5px;
-}
-.pulse-animation:after{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(90deg,#00C9FF 0%,rgba(0,0,0,0) 5%,rgba(0,0,0,0) 15%,rgba(0,0,0,0) 100%);
-    background-size: 600px;
-    background-position: 600px 0;
-    background-repeat: no-repeat;
-    filter: blur(10px);
-    opacity: 1;
-    transition: 0.5s;
-}
-.pulse-animation:hover::after,
-.pulse-animation:hover::before {
-    animation: anim 2s linear;
-}
-.animate:after, .animate::before {
-    animation: anim 2s linear;
-}
-@keyframes anim
-{
-    0%
-    {
-        background-position: -20px 0;
-    }
-    100%
-    {
-        background-position: 600px 0;
-    }
-}
+
 @keyframes movingFlare {
     0% {
       right: -30px;
@@ -2682,7 +2690,7 @@ body.noscroll {
     width: 344px;
     margin: 15px auto 20px auto;
   }
-  .pulse {
+  .pulses .pulse {
     width: 20px;
     height: 17px;
     border-radius: 10px;

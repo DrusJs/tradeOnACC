@@ -277,6 +277,18 @@ if (document.getElementsByClassName('number-ticker')){
         }
     });
 }
+if (document.querySelector(".main-accept__button")) {
+    document.querySelector(".main-accept__button").addEventListener("click", (elem)=> {
+        let self = elem.currentTarget;
+        if (self.classList.contains("animateBuy")) {
+            self.classList.remove("animateBuy");
+            setTimeout(()=>{self.classList.add("animateBuy")}, 5)
+        } else {
+            self.classList.add("animateBuy");
+        }
+    }) 
+    document.querySelector(".main-accept__button").addEventListener("animationend", ()=>{document.querySelector(".main-accept__button").classList.remove("animateBuy")});
+}
 if (document.querySelector(".account-card")) {
     document.querySelectorAll(".cards-section .account-card").forEach((el)=>{
         el.addEventListener("mouseenter", ()=>{
