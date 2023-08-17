@@ -392,6 +392,7 @@ body.noscroll {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 30px;
 }
 
 .account-card {
@@ -665,7 +666,7 @@ body.noscroll {
 .footer__border-gradient {
     background-color: #040C20;
     height: 128px;
-    padding: 35px 66px 0 150px;
+    padding: 27px 66px 0 150px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -3705,6 +3706,7 @@ body.noscroll {
         scrollbar-color: white transparent;
         scroll-padding-left: 30px;
         scroll-padding-right: 30px;
+        gap: 0px;
     }
     .scroll-container::-webkit-scrollbar {
         height: 4px;
