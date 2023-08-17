@@ -2191,6 +2191,12 @@ body.noscroll {
     top: 2px;
     right: 5px; 
 }
+.ruble {
+    position: absolute;
+    top: 74px;
+    left: 98px;
+    z-index: 5;
+}
 .input-deposit {
     width: 300px;
     height: 58px;
@@ -2201,11 +2207,25 @@ body.noscroll {
     background-color: transparent;
     background-size: cover; 
     background-repeat: no-repeat;
-    padding: 10px 40px;
+    padding: 10px 30px 10px 50px;
     text-align: center;
     outline: none;
     filter: drop-shadow(0px 0px 8px #01C9FF);
     position: relative;
+}
+.value-block {
+    position: relative;
+}
+.value-block .copy {
+    position: relative;
+    top: 5px;
+    left: 5px
+}
+.value-block .dollar {
+    position: relative;
+    top: 3px;
+    left: 45px;
+    z-index: 5;
 }
 .input-deposit::before {
     content: "₽";
@@ -3231,9 +3251,12 @@ body.noscroll {
     .referal-list-text {
         font-size: 15px;
     }
-
+    #modal-accounts {
+        padding: 0;
+    }
     .modal-container-bg.modal-accounts {
         width: 400px;
+        height: 600px;
         overflow-y: scroll;
         overflow-x: hidden;
     }
@@ -3436,6 +3459,10 @@ body.noscroll {
         width: 180px;
         height: 42px;
         margin-top: 32px;
+    }
+    .ruble {
+        top: 60px;
+        left: 82px;
     }
     .none-balance-header {
         font-size: 20px;
@@ -3874,6 +3901,141 @@ body.noscroll {
     .remind-pass {
         margin: -10px -10px 20px 0;
     }
+
+    .poligon {
+        width: 295px;
+        height: 43px;
+    }
+    .poligon-inner {   
+        clip-path: polygon(20px 0, 215px 0, 100% 100%, 0% 100%);
+        font-size: 17px;
+        padding: 0 25px;
+        width: 235px;
+        height: 35px;
+    }
+      .parent {
+        width: 295px;
+      }
+      .save-input {
+        top: 12px;
+        right: 28px;
+      }
+      .pulses {
+        position: relative;
+        width: 295px;
+        margin: 15px auto 20px auto;
+      }
+      @keyframes pulse-top {
+        0% {
+          top: 14px;
+          left: 285px;
+        }
+        15% {                
+          top: -6px;
+          left: 270px;
+        }
+        85% {
+          top: -6px;
+          left: 21px;
+        }
+        100% {
+          top: 14px;
+          left: 5px;
+        }
+      }
+      @keyframes pulse-bottom {
+        0% {
+          top: 14px;
+          left: 285px; 
+        }
+        10% {          
+          top: 33px;
+          left: 295px;
+        }
+        15%{          
+          top: 33px;
+          left: 270px;
+        }
+        85% {                
+          top: 33px;
+          left: 23px;
+        }
+        90% {
+          top: 33px;
+          left: -4px;
+        }
+        100% {               
+          top: 14px;
+          left: 5px;
+        }
+      }
+      .modal-container.modal__balance {
+        width: 380px;
+        height: 700px;
+        padding: 10px 0 0 0;
+        margin-top: 20px;
+        font-size: 17px;
+        gap: 10px;
+      }
+      .modal-container.modal__balance .modal-close {
+        top: -35px;
+      }
+      .balance-header {
+        font-size: 17px;
+        top: -27px;
+      }
+      .balance-header-bg {
+        width: 280px;
+        top: -37px;
+      }
+      .method {
+        height: 45px;
+      }
+      .method img {
+        width: 32px;
+        height: 32px;
+      }
+      .input-deposit, .input-balance-text {
+        font-size: 17px;
+        min-height: 50px;
+        width: 250px;
+        background-size: 300px 44px;
+        background-position: center;
+        background-image: url(../images/input-balance-mobile.svg);
+      }
+      .modal__balance p{
+        padding: 0 30px;
+      }
+      .balance-button {
+        width: 301px;
+        height: 37px;
+        background-size: 301px 37px;
+        margin-top: 10px;
+        font-size: 17px;
+    }
+    .modal-container.modal__balance-cript {
+        width: 350px;
+        height: 475px;
+        font-size: 17px;
+        gap: 20px;
+        padding-top: 20px;
+        margin-top: 0px;
+      }
+      .input-network {
+        width: 300px;
+        height: 45px;
+        font-size: 17px;
+      }
+      .balance-refuse-button {
+        width: 300px;
+        height: 44px;
+        font-size: 17px;
+      }
+      .value-block .copy {
+        position: relative;
+        top: 5px;
+        left: -7px
+    }
 }
 
 @media screen and (max-width: 550px) {
@@ -3908,5 +4070,11 @@ body.noscroll {
     }
     .store-form__percent-inner {
         right: -5px;
+    }
+    .modal-accounts {
+        margin-left: -15px;
+    }
+    .modal-account-check, .modal-account-review, .modal-account-instruction {
+        width: 350px;
     }
 }
