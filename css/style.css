@@ -827,10 +827,10 @@ body.noscroll {
     left: -100px;
 }
 .instructions__button:hover::after{
-    animation: pulse-instruc-top 5s linear;
+    animation: pulse-instruc-top 700ms linear;
 }
 .instructions__button:hover::before{
-    animation: pulse-instruc-bottom 5s linear;
+    animation: pulse-instruc-bottom 700ms linear;
 }
 @keyframes pulse-instruc-top {
     0% {
