@@ -267,11 +267,15 @@ body.noscroll {
 }
 .auth__sign-up {
     cursor: pointer;
+    transition: 200ms ease-in-out;
     font-size: 24px;
     background: var(--linear-gradient-main);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+.profile__balance-valu {
+    transition: 200ms ease-in-out;
 }
 .profile {
     display: none;
@@ -439,9 +443,9 @@ body.noscroll {
 .card-hover-list__item::marker {
     color: #92FE9D;
 }
-/* .account-card.non-skew-cards:hover {
+.account-card.non-skew-cards:hover {
     transform: scale(1.06)  var(--skew-cards-block-back);
-} */
+}
 .popular .account-card:hover{
     transform: scale(1.06);
 }
@@ -804,33 +808,66 @@ body.noscroll {
     font-family: var(--font-play-bold);
     font-size: 25px;
     color: #FFFFFF;
-    padding: 10px 42px;
+    padding: 15px 48px;
     cursor: pointer;
     transition: 200ms ease-in;
     position: relative;
     overflow: hidden;
 }
-.instructions__button:hover::after{
-    content: "";
-    display: block;
-    width: 20px;
-    height: 100px;
-    margin-right: -30px;
-    background: #fff;
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.5) 0%,
-        rgba(255, 255, 255, 1) 50%,
-        rgba(255, 255, 255, 0.5) 100%
-    );
-    right: -40px;
-    top: -17px;
-    z-index: 1;
-    transform: rotate(30deg);
-    position: absolute;
-    animation: movingFlare 3s ease-in-out 0.05s infinite;
-}
 
+.instructions__button::after, .instructions__button::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #01C9FF;
+    position: absolute;
+    filter: blur(5px);
+    top: -100px;
+    left: -100px;
+}
+.instructions__button:hover::after{
+    animation: pulse-instruc-top 5s linear;
+}
+.instructions__button:hover::before{
+    animation: pulse-instruc-bottom 5s linear;
+}
+@keyframes pulse-instruc-top {
+    0% {
+        top: 10%;
+        left: 50%;
+    }
+    45% {
+        top: 10%;
+        left: 3%;
+    }
+    55% {
+        top: 78%;
+        left: 3%;
+    }
+    100% {
+        top: 78%;
+        left: 50%;
+    }
+}
+@keyframes pulse-instruc-bottom {
+    0% {
+        top: 10%;
+        left: 50%;
+    }
+    45% {
+        top: 10%;
+        left: 92%;
+    }
+    55% {
+        top: 78%;
+        left: 92%;
+    }
+    100% {
+        top: 78%;
+        left: 50%;
+    }
+}
 @keyframes instructionAnimate {
     from {
       transform: translateX(50px);
@@ -2068,6 +2105,31 @@ body.noscroll {
     padding: 25px 0;
     margin: 50px auto 0 auto;
     cursor: pointer;
+}
+@keyframes pulse-cloud {
+    form {        
+        filter: drop-shadow(0px 0px 0px #01C9FF);
+    }
+    to {        
+        filter: drop-shadow(0px 0px 15px #01C9FF);
+    }
+}
+@keyframes pulse-cloud-small {
+    form {        
+        filter: drop-shadow(0px 0px 0px #01C9FF);
+    }
+    to {        
+        filter: drop-shadow(0px 0px 5px #01C9FF);
+    }
+}
+.auth__sign-up:hover, .profile-balance-valu:hover {
+    filter: drop-shadow(0px 0px 5px #01C9FF);
+}
+.modal-account-download.cloud-anim img {
+    animation: pulse-cloud 0.8s linear;
+}
+.cell img.cloud-anim {
+    animation: pulse-cloud-small 0.8s linear;
 }
 .modal-accounts .gradient{
     background: var(--linear-gradient-main);

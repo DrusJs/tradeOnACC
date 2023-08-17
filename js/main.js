@@ -309,28 +309,33 @@ if (document.querySelector(".main-accept__button")) {
 // }
 
 if (document.querySelector(".account-card")) {
+    var isHover = false;
     document.querySelectorAll(".cards-section .account-card").forEach((el)=>{
         el.addEventListener("mouseenter", ()=>{
             console.log(window.matchMedia("(min-width: 1150px)").matches);
             if (window.matchMedia("(min-width: 1150px)").matches){
                 let coords = el.getBoundingClientRect();                
                 let desc = document.querySelector(".card-hover");
-                if (+coords.left < window.innerWidth/2){
-                    if (+coords.left+ 1000 > document.body.clientWidth) {
-                        desc.classList.add("small");
+                if (!isHover) {
+                    console.log(isHover);
+                    if (+coords.left < window.innerWidth/2){
+                        if (+coords.left+ 1000 > document.body.clientWidth) {
+                            desc.classList.add("small");
+                        }
+                        desc.style.display = "block";
+                        desc.style.top = (+coords.top+window.pageYOffset-56)+"px";
+                        desc.style.left = (+coords.left+ window.pageXOffset+130)+"px";
+                    } else {
+                        desc.classList.add("wrap");
+                        if (+coords.left < 1000) {
+                            desc.classList.add("small");
+                        }                   
+                        desc.style.display = "block";
+                        desc.style.top = (+coords.top+window.pageYOffset-74)+"px";
+                        desc.style.left = (+coords.left+ window.pageXOffset+31-desc.scrollWidth)+"px";
                     }
-                    desc.style.display = "block";
-                    desc.style.top = (+coords.top+window.pageYOffset-56)+"px";
-                    desc.style.left = (+coords.left+ window.pageXOffset+130)+"px";
-                } else {
-                    desc.classList.add("wrap");
-                    if (+coords.left < 1000) {
-                        desc.classList.add("small");
-                    }                   
-                    desc.style.display = "block";
-                    desc.style.top = (+coords.top+window.pageYOffset-76)+"px";
-                    desc.style.left = (+coords.left+ window.pageXOffset+33-desc.scrollWidth)+"px";
-                }
+                }                
+                isHover = true;
             }
         })
     })
@@ -342,6 +347,7 @@ if (document.querySelector(".account-card")) {
                 desc.classList.remove("wrap");
                 desc.classList.remove("small");
                 el.classList.remove("active");
+                isHover = false;
             }
         })
     })
@@ -380,4 +386,29 @@ if (document.querySelector(".review__card")) {
         document.getElementById("modal-balance-cript").classList.add("active");
         document.body.classList.add("noscroll");
     })
+}
+if (document.querySelector(".modal-account-download")) {
+    document.querySelector(".modal-account-download").addEventListener("click", (elem)=> {
+        let self = elem.currentTarget;
+        if (self.classList.contains("cloud-anim")) {
+            self.classList.remove("cloud-anim");
+            setTimeout(()=>{self.classList.add("cloud-anim")}, 5)
+        } else {
+            self.classList.add("cloud-anim");
+        }
+    }) 
+    document.querySelector(".modal-account-download").addEventListener("animationend", ()=>{document.querySelector(".modal-account-download").classList.remove("cloud-anim")});
+}
+if (document.querySelector(".cell img")) {
+    document.querySelectorAll(".cell img").forEach((el=>{
+        el.addEventListener("click", ()=> {
+            if (el.classList.contains("cloud-anim")) {
+                el.classList.remove("cloud-anim");
+                setTimeout(()=>{el.classList.add("cloud-anim")}, 5)
+            } else {
+                el.classList.add("cloud-anim");
+            }
+        }) 
+        el.addEventListener("animationend", ()=>{el.classList.remove("cloud-anim")});
+    }))
 }
