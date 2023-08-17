@@ -2068,7 +2068,7 @@ body.noscroll {
 }
 .modal-account-check {
     text-align: center;
-    padding-top: 40px;
+    padding-top: 62px;
     width: 50%;
     height: 300px;
     display: flex;
@@ -2077,7 +2077,7 @@ body.noscroll {
 }
 .modal-account-review {
     text-align: center;
-    padding-top: 40px;
+    padding-top: 62px;
     width: 50%;
     display: flex;
     align-items: center;
@@ -2104,7 +2104,7 @@ body.noscroll {
     justify-content: center;
     align-items: center;
     padding: 25px 0;
-    margin: 50px auto 0 auto;
+    margin: 26px auto 0 auto;
     cursor: pointer;
 }
 @keyframes pulse-cloud {
@@ -2168,6 +2168,8 @@ body.noscroll {
 .modal-accounts ul {
     display: flex;
     flex-direction: column;
+    gap: 3px;
+    margin-top: 18px;
 }
 .modal-accounts li {
     margin-bottom: 10px;
@@ -2955,6 +2957,10 @@ body.noscroll {
     .store-section__block-svg .store-form__header {
         top: 42px;
     }
+    .store-form__header.left {
+        margin-left: 20px;
+    }
+
 }
 @media screen and (max-width: 1260px) {
     .header{        
@@ -3324,8 +3330,8 @@ body.noscroll {
         overflow-x: hidden;
     }
     .modal-accounts .modal-close {
-        top: -30px;
-        right: 0px;
+        top: 3px;
+        right: 15px;
     }
     .modal-accounts .modal-containe {
         background-image: none;
@@ -3356,6 +3362,7 @@ body.noscroll {
     .modal-account-instruction {
         background-image: url(../images/modal-instruction-mobile.svg);
         height: 200px;
+        padding: 0 50px;
     }
     .modal-accounts p {
         width: 310px;
@@ -3429,6 +3436,9 @@ body.noscroll {
     .wrapper {
         background-image: url(../images/wrapper-bg.png);
         background-size: 100%;
+    }
+    .store-form__header.left {
+        margin-left: 0px;
     }
     .modal__card-desc {
         max-width: 360px;
