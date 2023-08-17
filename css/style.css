@@ -4151,4 +4151,7 @@ body.noscroll {
     .modal-account-check, .modal-account-review, .modal-account-instruction {
         width: 350px;
     }
+    .modal-container.modal__balance {
+        width: 360px;
+      }
 }
