@@ -602,7 +602,7 @@ body.noscroll {
     align-items: center;
     gap: 15px;
     padding: 10px 0;    
-    height: 145px;
+    height: 0px;
     opacity: 0;
     transition: 300ms;
 }
