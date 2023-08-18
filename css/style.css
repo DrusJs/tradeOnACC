@@ -535,25 +535,33 @@ body.noscroll {
 }
 .card-hover {
     position: absolute;
-    display: none;
-    width: 900px;
+    display: block;
+    width: 780px;
     height: 250px;
-    background-image: url(../images/card-description-hover.png);
+    background-image: url(../images/test-long.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     left: 128px;
-    top: -55px;
+    top: 55px;
     z-index: 55;
-    padding: 40px 44px 20px 170px;
+    padding: 30px 40px 20px 30px;
     box-shadow: 0px 0px;
 }
+.card-hover-inner {
+    position: relative;
+}
+.card-hover .chain {
+    position: absolute;
+    top: 0px;
+    left: -127px;
+}
 .card-hover.small {
-    width: 577px;
-    height: 410px;
-    background-image: url(../images/card-hover-small.png);
+    width: 470px;
+    height: 419px;
+    background-image: url(../images/test.png);
     z-index: 55;
-    padding: 30px 44px 20px 150px;
+    padding: 30px 40px 20px 30px;
 }
 .card-hover.wrap {
     -webkit-transform: scale(-1, 1);

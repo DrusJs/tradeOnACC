@@ -326,8 +326,8 @@ if (document.querySelector(".account-card")) {
                             desc.classList.add("small");
                         }
                         desc.style.display = "block";
-                        desc.style.top = (+coords.top+window.pageYOffset-56)+"px";
-                        desc.style.left = (+coords.left+ window.pageXOffset+130)+"px";
+                        desc.style.top = (+coords.top+window.pageYOffset-60)+"px";
+                        desc.style.left = (+coords.left+ window.pageXOffset+242)+"px";
                         console.log(desc.style.left, +coords.left, window.pageXOffset);
                     } else {
                         desc.classList.add("wrap");
@@ -335,8 +335,8 @@ if (document.querySelector(".account-card")) {
                             desc.classList.add("small");
                         }                   
                         desc.style.display = "block";
-                        desc.style.top = (+coords.top+window.pageYOffset-74)+"px";
-                        desc.style.left = (+coords.left+ window.pageXOffset+31-desc.scrollWidth)+"px";
+                        desc.style.top = (+coords.top+window.pageYOffset-84)+"px";
+                        desc.style.left = (+coords.left+ window.pageXOffset-78-desc.scrollWidth)+"px";
                         console.log(desc.style.left, +coords.left, window.pageXOffset);
                     }
             }
