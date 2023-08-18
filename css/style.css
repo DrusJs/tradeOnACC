@@ -1888,6 +1888,9 @@ body.noscroll {
     width: 100%;
     max-width: 1490px;
 }
+.block-svg__background.height {
+    height: 230px;
+}
 .block-svg__backgroundM {
     position: absolute;
     top: 0;
