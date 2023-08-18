@@ -166,7 +166,7 @@ body.noscroll {
     -webkit-transition: 260ms ease-in;
     -o-transition: 260ms ease-in;
     transition: 260ms ease-in;
-    z-index: 5;
+    z-index: 110s;
 }
 
 .main-absolute {
