@@ -312,7 +312,6 @@ if (document.querySelector(".account-card")) {
     document.querySelectorAll(".cards-section .account-card").forEach((el)=>{
         el.addEventListener("mouseenter", (e)=>{
             if (window.matchMedia("(min-width: 1150px)").matches){
-                console.log(e);
                 try{      
                 document.querySelector(".account-card.hover").classList.remove("hover");
                 } catch{}
@@ -329,6 +328,7 @@ if (document.querySelector(".account-card")) {
                         desc.style.display = "block";
                         desc.style.top = (+coords.top+window.pageYOffset-56)+"px";
                         desc.style.left = (+coords.left+ window.pageXOffset+130)+"px";
+                        console.log(desc.style.left, +coords.left, window.pageXOffset);
                     } else {
                         desc.classList.add("wrap");
                         if (+coords.left < 1000) {
@@ -337,6 +337,7 @@ if (document.querySelector(".account-card")) {
                         desc.style.display = "block";
                         desc.style.top = (+coords.top+window.pageYOffset-74)+"px";
                         desc.style.left = (+coords.left+ window.pageXOffset+31-desc.scrollWidth)+"px";
+                        console.log(desc.style.left, +coords.left, window.pageXOffset);
                     }
             }
         })
