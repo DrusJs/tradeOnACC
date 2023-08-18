@@ -423,3 +423,16 @@ if (document.querySelector(".deposit-button")) {
         }
     }) 
 }
+document.querySelector(".cards-filter-mobile-bg").addEventListener("click", (el)=>{
+    el.currentTarget.classList.toggle("active")
+})
+document.querySelectorAll(".drop-item").forEach((el)=>{
+    el.addEventListener("click", ()=>{
+        document.querySelector(".cards-filter-mobile span").innerHTML = el.innerHTML;
+    })
+})
+window.onclick = function (event) {
+    if (!(event.target.className == 'non-skew') && !(event.target.className == 'cards-filter-mobile')){
+            document.querySelector(".cards-filter-mobile-bg").classList.remove("active");
+    }
+}
