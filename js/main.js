@@ -311,13 +311,16 @@ if (document.querySelector(".main-accept__button")) {
 if (document.querySelector(".account-card")) {
     var isHover = false;
     document.querySelectorAll(".cards-section .account-card").forEach((el)=>{
-        el.addEventListener("mouseenter", ()=>{
-            console.log(window.matchMedia("(min-width: 1150px)").matches);
+        el.addEventListener("mouseover", ()=>{
             if (window.matchMedia("(min-width: 1150px)").matches){
+                if (isHover) {return}
+                document.getElementsByClassName("shadow-page")[0].classList.add("active");
+                document.getElementsByClassName("shadow-page")[1].classList.add("active");
                 let coords = el.getBoundingClientRect();                
                 let desc = document.querySelector(".card-hover");
                 if (!isHover) {
-                    console.log(isHover);
+                    document.querySelector(".cards-section").classList.add("shadow");
+                    el.classList.add("hover");
                     if (+coords.left < window.innerWidth/2){
                         if (+coords.left+ 1000 > document.body.clientWidth) {
                             desc.classList.add("small");
@@ -340,13 +343,17 @@ if (document.querySelector(".account-card")) {
         })
     })
     document.querySelectorAll(".cards-section .account-card").forEach((el)=>{
-        el.addEventListener("mouseleave", ()=>{            
+        el.addEventListener("mouseout", ()=>{            
             if (window.matchMedia("(min-width: 1150px)").matches){   
                 let desc = document.querySelector(".card-hover");
+                document.querySelector(".cards-section").classList.remove("shadow");
+                el.classList.remove("hover");
                 desc.style.display = "none";
                 desc.classList.remove("wrap");
                 desc.classList.remove("small");
-                el.classList.remove("active");
+                el.classList.remove("active");                
+                document.getElementsByClassName("shadow-page")[0].classList.remove("active");
+                document.getElementsByClassName("shadow-page")[1].classList.remove("active");
                 isHover = false;
             }
         })

@@ -168,10 +168,11 @@ body.noscroll {
     transition: 260ms ease-in;
     z-index: 5;
 }
-.burger-menu.active {
 
+.main-absolute {
+    position: absolute;
+    top: 45px;
 }
-
 .burger-menu .bar {
     width: 25px;
     height: 2px;
@@ -424,7 +425,7 @@ body.noscroll {
     margin-top: 10px;
 }
 .popular {
-    background-image: url(../images/popular-bg.svg);
+    /* background-image: url(../images/popular-bg.svg); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -543,14 +544,15 @@ body.noscroll {
     background-position: center;
     left: 128px;
     top: -55px;
-    z-index: 100;
+    z-index: 55;
     padding: 40px 44px 20px 170px;
+    box-shadow: 0px 0px;
 }
 .card-hover.small {
     width: 577px;
     height: 410px;
     background-image: url(../images/card-hover-small.png);
-    z-index: 100;
+    z-index: 55;
     padding: 30px 44px 20px 150px;
 }
 .card-hover.wrap {
@@ -571,10 +573,20 @@ body.noscroll {
 .card-hover-list__item::marker {
     color: #92FE9D;
 }
+.cards-section .account-card {
+    z-index: 60;
+    transition: 300ms ease-in-out;
+}
+.cards-section.shadow .account-card {
+    opacity: 0.2;
+}
+.cards-section.shadow .account-card.hover {
+    opacity: 1;
+}
 .account-card.non-skew-cards:hover {
-    -webkit-transform: scale(1.06)  var(--skew-cards-block-back);
+    /* -webkit-transform: scale(1.06)  var(--skew-cards-block-back);
         -ms-transform: scale(1.06)  var(--skew-cards-block-back);
-            transform: scale(1.06)  var(--skew-cards-block-back);
+            transform: scale(1.06)  var(--skew-cards-block-back); */
 }
 .popular .account-card:hover{
     -webkit-transform: scale(1.06);
@@ -680,7 +692,23 @@ body.noscroll {
         -ms-flex-pack: start;
             justify-content: flex-start;
     margin: -35px 0 55px 0;
-    z-index: 1;
+    z-index: 50;
+}
+.shadow-page {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 49;
+    transition: 300ms ease-in-out;
+}
+.shadow-page.active {
+    visibility: visible;
+    opacity: 1;
 }
 .cards-filter {
     height: 61px;
@@ -690,6 +718,7 @@ body.noscroll {
     display: -ms-flexbox;
     display: flex;
     padding-left: 22px;
+    z-index: -1;
 }
 .cards-filter-mobile-bg {
     padding: 3px;
@@ -2808,7 +2837,7 @@ body.noscroll {
     left: 0px;
     width: 100%;
     height: 100%;
-    z-index: 7;
+    z-index: 110;
     padding: 5px;
     background-color: rgba(0, 0, 0, .7);
 }
@@ -4664,6 +4693,9 @@ body.noscroll {
     .wrapper {
         background-image: url(../images/wrapper-bg.png);
         background-size: 100%;
+    }
+    .main-absolute {
+        display: none;
     }
     .instructions__button:hover::after{
         -webkit-animation: none;
