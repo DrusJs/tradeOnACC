@@ -547,6 +547,7 @@ body.noscroll {
     z-index: 55;
     padding: 30px 40px 20px 30px;
     box-shadow: 0px 0px;
+    pointer-events: none;
 }
 .card-hover-inner {
     position: relative;
