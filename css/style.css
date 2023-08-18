@@ -3507,6 +3507,12 @@ body.noscroll {
         background-image: url(../images/wrapper-bg.png);
         background-size: 100%;
     }
+    .instructions__button:hover::after{
+        animation: none;
+    }
+    .instructions__button:hover::before{
+        animation: none;
+    }
     .store-form__header.left {
         margin-left: 0px;
     }
