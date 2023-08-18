@@ -412,3 +412,14 @@ if (document.querySelector(".cell img")) {
         el.addEventListener("animationend", ()=>{el.classList.remove("cloud-anim")});
     }))
 }
+if (document.querySelector(".deposit-button")) {
+    document.querySelector(".deposit-button").addEventListener("click", (elem)=> {
+        let self = elem.currentTarget;
+        if (self.classList.contains("LightClick")) {
+            self.classList.remove("LightClick");
+            setTimeout(()=>{self.classList.add("LightClick")}, 5)
+        } else {
+            self.classList.add("LightClick");
+        }
+    }) 
+}

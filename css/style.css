@@ -1271,7 +1271,17 @@ body.noscroll {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    cursor: default;
 }
+.referal-table-item .gradient:hover {
+    animation: shine 1s linear infinite;
+}
+@keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
 
 .store-section__flex {
     display: flex;
@@ -1398,6 +1408,7 @@ body.noscroll {
 
 .LightUp {
     overflow: hidden;
+    position: relative;
 }
 .LightUp:after {
     content: "";
@@ -1418,6 +1429,26 @@ body.noscroll {
     transform: rotate(45deg);
     position: absolute;
     animation: movingFlare 3s ease-in-out 0.05s infinite;
+}
+.LightClick:after {
+    content: "";
+    display: block;
+    width:20px;
+    height: 200px;
+    margin-right: -30px;
+    background: #fff;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 0.5) 100%
+    );
+    right: -40px;
+    top: -100px;
+    z-index: 1;
+    transform: rotate(45deg);
+    position: absolute;
+    animation: movingFlare 3s ease-in-out 0.05s;
 }
 
 /*reviews.html*/
@@ -1697,6 +1728,7 @@ body.noscroll {
     font-size: 20px;
     font-family: var(--font-play-bold);
     position: relative;
+    overflow: hidden;
     cursor: pointer;
 }
 .deposit-button .green {
@@ -2125,6 +2157,7 @@ body.noscroll {
 }
 .auth__sign-up:hover, .profile-balance-valu:hover {
     filter: drop-shadow(0px 0px 5px #01C9FF);
+    transform: scale(1.1);
 }
 .modal-account-download.cloud-anim img {
     animation: pulse-cloud 0.8s linear;
