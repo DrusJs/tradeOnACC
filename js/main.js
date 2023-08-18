@@ -310,8 +310,9 @@ if (document.querySelector(".main-accept__button")) {
 
 if (document.querySelector(".account-card")) {
     document.querySelectorAll(".cards-section .account-card").forEach((el)=>{
-        el.addEventListener("mouseover", ()=>{
+        el.addEventListener("mouseenter", (e)=>{
             if (window.matchMedia("(min-width: 1150px)").matches){
+                console.log(e);
                 try{      
                 document.querySelector(".account-card.hover").classList.remove("hover");
                 } catch{}
@@ -326,22 +327,23 @@ if (document.querySelector(".account-card")) {
                             desc.classList.add("small");
                         }
                         desc.style.display = "block";
-                        desc.style.top = (+coords.top+window.scrollY-56)+"px";
-                        desc.style.left = (+coords.left+ window.screenX+130)+"px";
+                        desc.style.top = (+coords.top+window.pageYOffset-56)+"px";
+                        desc.style.left = (+coords.left+ window.pageXOffset+130)+"px";
                     } else {
                         desc.classList.add("wrap");
                         if (+coords.left < 1000) {
                             desc.classList.add("small");
                         }                   
                         desc.style.display = "block";
-                        desc.style.top = (+coords.top+window.scrollY-74)+"px";
-                        desc.style.left = (+coords.left+ window.screenX+31-desc.scrollWidth)+"px";
+                        desc.style.top = (+coords.top+window.pageYOffset-74)+"px";
+                        desc.style.left = (+coords.left+ window.pageXOffset+31-desc.scrollWidth)+"px";
                     }
             }
         })
     })
     // document.querySelectorAll(".cards-section .account-card").forEach((el)=>{
-    //     el.addEventListener("mouseleave", (e)=>{            
+    //     el.addEventListener("mouseleave", (e)=>{
+              
     //         if (window.matchMedia("(min-width: 1150px)").matches){
     //             let desc = document.querySelector(".card-hover");
     //             document.querySelector(".cards-section").classList.remove("shadow");
@@ -355,33 +357,42 @@ if (document.querySelector(".account-card")) {
     //         }
     //     })
     // })
-    document.querySelectorAll(".shadow-page").forEach((el)=>{
-        el.addEventListener("mouseover", (e)=>{            
-            if (window.matchMedia("(min-width: 1150px)").matches){
-                document.querySelector(".account-card.hover").classList.remove("hover");
+    document.querySelectorAll(".card-hover").forEach((el)=>{
+        el.addEventListener("mousemove", (e)=>{        
+            if (window.matchMedia("(min-width: 1150px)").matches){ 
+                try{      
+                    document.querySelector(".account-card.hover").classList.remove("hover");
+                    } catch{}
                 let desc = document.querySelector(".card-hover");
                 document.querySelector(".cards-section").classList.remove("shadow");
                 el.classList.remove("hover");
                 desc.style.display = "none";
                 desc.classList.remove("wrap");
                 desc.classList.remove("small");
-                el.classList.remove("active");                
+                el.classList.remove("active");
+                desc.style.top = "0px";
+                desc.style.left = "0px";            
                 document.getElementsByClassName("shadow-page")[0].classList.remove("active");
                 document.getElementsByClassName("shadow-page")[1].classList.remove("active");
             }
         })
     })
-    document.querySelectorAll(".card-hover").forEach((el)=>{
+    document.querySelectorAll(".shadow-page").forEach((el)=>{
         el.addEventListener("mouseover", (e)=>{            
             if (window.matchMedia("(min-width: 1150px)").matches){
-                document.querySelector(".account-card.hover").classList.remove("hover");
+            if(e.relatedTarget.classList[0]=="account-card") {return}
+                try{      
+                    document.querySelector(".account-card.hover").classList.remove("hover");
+                    } catch{}
                 let desc = document.querySelector(".card-hover");
                 document.querySelector(".cards-section").classList.remove("shadow");
                 el.classList.remove("hover");
                 desc.style.display = "none";
                 desc.classList.remove("wrap");
                 desc.classList.remove("small");
-                el.classList.remove("active");                
+                el.classList.remove("active");
+                desc.style.top = "0px";
+                desc.style.left = "0px";            
                 document.getElementsByClassName("shadow-page")[0].classList.remove("active");
                 document.getElementsByClassName("shadow-page")[1].classList.remove("active");
             }

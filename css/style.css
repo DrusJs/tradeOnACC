@@ -578,7 +578,7 @@ body.noscroll {
     transition: 300ms ease-in-out;
 }
 .cards-section.shadow .account-card {
-    opacity: 0.2;
+    opacity: 0.1;
 }
 .cards-section.shadow .account-card.hover {
     opacity: 1;
