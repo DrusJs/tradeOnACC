@@ -380,7 +380,6 @@ if (document.querySelector(".account-card")) {
     document.querySelectorAll(".shadow-page").forEach((el)=>{
         el.addEventListener("mouseover", (e)=>{            
             if (window.matchMedia("(min-width: 1150px)").matches){
-            if(e.relatedTarget.classList[0]=="account-card") {return}
                 try{      
                     document.querySelector(".account-card.hover").classList.remove("hover");
                     } catch{}
