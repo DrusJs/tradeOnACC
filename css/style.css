@@ -602,9 +602,9 @@ body.noscroll {
     align-items: center;
     gap: 15px;
     padding: 10px 0;    
-    height: 0px;
+    height: 145px;
     opacity: 0;
-    transition: 400ms;
+    transition: 300ms;
 }
 .cards-filter-mobile-bg.active .cards-filter-drop {
     height: 145px;
