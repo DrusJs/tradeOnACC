@@ -342,57 +342,17 @@ if (document.querySelector(".account-card")) {
             }
         })
     })
-    // document.querySelectorAll(".cards-section .account-card").forEach((el)=>{
-    //     el.addEventListener("mouseleave", (e)=>{
+    document.querySelectorAll(".cards-section .account-card").forEach((el)=>{
+        el.addEventListener("mouseleave", (e)=>{
               
-    //         if (window.matchMedia("(min-width: 1150px)").matches){
-    //             let desc = document.querySelector(".card-hover");
-    //             document.querySelector(".cards-section").classList.remove("shadow");
-    //             el.classList.remove("hover");
-    //             desc.style.display = "none";
-    //             desc.classList.remove("wrap");
-    //             desc.classList.remove("small");
-    //             el.classList.remove("active");                
-    //             document.getElementsByClassName("shadow-page")[0].classList.remove("active");
-    //             document.getElementsByClassName("shadow-page")[1].classList.remove("active");
-    //         }
-    //     })
-    // })
-    document.querySelectorAll(".card-hover").forEach((el)=>{
-        el.addEventListener("mousemove", (e)=>{        
-            if (window.matchMedia("(min-width: 1150px)").matches){ 
-                try{      
-                    document.querySelector(".account-card.hover").classList.remove("hover");
-                    } catch{}
-                let desc = document.querySelector(".card-hover");
-                document.querySelector(".cards-section").classList.remove("shadow");
-                el.classList.remove("hover");
-                desc.style.display = "none";
-                desc.classList.remove("wrap");
-                desc.classList.remove("small");
-                el.classList.remove("active");
-                desc.style.top = "0px";
-                desc.style.left = "0px";            
-                document.getElementsByClassName("shadow-page")[0].classList.remove("active");
-                document.getElementsByClassName("shadow-page")[1].classList.remove("active");
-            }
-        })
-    })
-    document.querySelectorAll(".shadow-page").forEach((el)=>{
-        el.addEventListener("mouseover", (e)=>{            
             if (window.matchMedia("(min-width: 1150px)").matches){
-                try{      
-                    document.querySelector(".account-card.hover").classList.remove("hover");
-                    } catch{}
                 let desc = document.querySelector(".card-hover");
                 document.querySelector(".cards-section").classList.remove("shadow");
                 el.classList.remove("hover");
                 desc.style.display = "none";
                 desc.classList.remove("wrap");
                 desc.classList.remove("small");
-                el.classList.remove("active");
-                desc.style.top = "0px";
-                desc.style.left = "0px";            
+                el.classList.remove("active");                
                 document.getElementsByClassName("shadow-page")[0].classList.remove("active");
                 document.getElementsByClassName("shadow-page")[1].classList.remove("active");
             }

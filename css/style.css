@@ -535,7 +535,7 @@ body.noscroll {
 }
 .card-hover {
     position: absolute;
-    display: block;
+    display: none;
     width: 780px;
     height: 250px;
     background-image: url(../images/test-long.png);
