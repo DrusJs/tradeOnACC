@@ -815,12 +815,12 @@ body.noscroll {
         -ms-transform: rotate(180deg);
             transform: rotate(180deg);
 }
-/* .drop-item {    
-    font-family: var(--font-play-bold);
-    font-size: 17px;
-    color: #FFFFFF;
-    background-color: var(--color-background-container);
-} */
+.cards-filter-mobile-bg .drop-item {    
+    pointer-events: none;
+} 
+.cards-filter-mobile-bg.active .drop-item {    
+    pointer-events: auto;
+} 
 .cards-section-bg {
     padding: 3px;
     background-image: var(--linear-gradient-main);
