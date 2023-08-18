@@ -4703,6 +4703,10 @@ body.noscroll {
         background-image: url(../images/wrapper-bg.png);
         background-size: 100%;
     }
+    .cards-section .account-card {
+        z-index: 1;
+        transition: none;
+    }
     .main-absolute {
         display: none;
     }
