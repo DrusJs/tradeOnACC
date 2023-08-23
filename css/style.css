@@ -3075,7 +3075,7 @@ body.noscroll {
     overflow-x: hidden;
     max-height: 700px;
     position: relative;
-    padding-top: 40px;
+    padding: 40px 0;
 }
 .modal-container.modal__balance .modal-close {
     display: block;
@@ -4657,6 +4657,42 @@ body.noscroll {
         background-image: url(../images/wrapper-bg.png);
         background-size: 100%;
     }
+    @keyframes balance-top {
+    0% {
+      top: -3px;
+      left: 50%;
+    }
+    45% {                
+      top: -3px;
+      left: 95%;
+    }
+    55% {
+      top: 31px;
+      left: 95%;
+    }
+    100% {
+      top: 31px;
+      left: 50%;
+    }
+  }
+  @keyframes balance-bottom {
+    0% {
+      top: -3px;
+      left: 50%; 
+    }
+    45% {          
+      top: -3px;
+      left: 0px;
+    }
+    55%{          
+      top: 31px;
+      left: 0px;
+    }
+    100% {               
+      top: 31px;
+      left: 50%;
+    }
+  }
     .modal-container.modal__balance {
         max-height: 600px;
     }
@@ -4790,7 +4826,7 @@ body.noscroll {
     }
     .ruble {
         top: 95px;
-        left: 104px;
+        left: 85px;
     }
     .none-balance-header {
         font-size: 20px;
