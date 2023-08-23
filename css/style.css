@@ -3076,6 +3076,11 @@ body.noscroll {
     max-height: 700px;
     position: relative;
     padding: 40px 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.modal-container.modal__balance .overflow::-webkit-scrollbar {
+    display: none;
 }
 .modal-container.modal__balance .modal-close {
     display: block;
