@@ -4658,11 +4658,11 @@ body.noscroll {
         background-size: 100%;
     }
     .modal-container.modal__balance {
-        max-height: 700px;
+        max-height: 600px;
     }
     .modal-container.modal__balance .overflow {
         overflow-y: scroll;
-        max-height: 650px;
+        max-height: 550px;
         max-width: 375px;
     }
     .cards-section .account-card {
