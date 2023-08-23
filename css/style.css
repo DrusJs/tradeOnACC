@@ -3075,6 +3075,7 @@ body.noscroll {
     overflow-x: hidden;
     max-height: 700px;
     position: relative;
+    padding-top: 40px;
 }
 .modal-container.modal__balance .modal-close {
     display: block;
@@ -3159,7 +3160,7 @@ body.noscroll {
 }
 .ruble {
     position: absolute;
-    top: 67px;
+    top: 107px;
     left: 100px;
     z-index: 5;
 }
@@ -3275,10 +3276,10 @@ body.noscroll {
 .none-balance-button::before{
     content: "";
     position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    left: 5px;
     z-index: -1;
     background: -webkit-gradient(linear, left top, right top, from(#03a9f4), color-stop(#f441a5), color-stop(#45F5B6), to(#03a9f4));
     background: -o-linear-gradient(left, #03a9f4, #f441a5, #45F5B6, #03a9f4);
@@ -3292,13 +3293,13 @@ body.noscroll {
     transition: .5s;
 }
 .balance-button .pulse {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 10px;
     background-color: #01C9FF;
     position: absolute;
-    -webkit-filter: blur(3px);
-            filter: blur(3px);
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
     opacity: 0;
 }
 .balance-button.animateBuy .pulse.top {
@@ -3311,25 +3312,6 @@ body.noscroll {
             animation: balance-bottom 1s linear;
     opacity: 1;
 }
-
-@-webkit-keyframes balance-top {
-    0% {
-      top: -2px;
-      left: 50%;
-    }
-    45% {                
-      top: -2px;
-      left: 97%;
-    }
-    55% {
-      top: 43px;
-      left: 97%;
-    }
-    100% {
-      top: 43px;
-      left: 50%;
-    }
-  }
 
 @keyframes balance-top {
     0% {
@@ -3349,24 +3331,6 @@ body.noscroll {
       left: 50%;
     }
   }
-  @-webkit-keyframes balance-bottom {
-    0% {
-      top: 0px;
-      left: 50%; 
-    }
-    45% {          
-      top: 0px;
-      left: 0px;
-    }
-    55%{          
-      top: 43px;
-      left: 0px;
-    }
-    100% {               
-      top: 43px;
-      left: 50%;
-    }
-  }
   @keyframes balance-bottom {
     0% {
       top: 0px;
@@ -3374,11 +3338,11 @@ body.noscroll {
     }
     45% {          
       top: 0px;
-      left: 0px;
+      left: -5px;
     }
     55%{          
       top: 43px;
-      left: 0px;
+      left: -5px;
     }
     100% {               
       top: 43px;
@@ -4825,7 +4789,7 @@ body.noscroll {
         margin-top: 32px;
     }
     .ruble {
-        top: 55px;
+        top: 95px;
         left: 104px;
     }
     .none-balance-header {

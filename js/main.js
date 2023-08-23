@@ -300,21 +300,21 @@ if (document.querySelector(".main-accept__button")) {
     }) 
     document.querySelector(".main-accept__button").addEventListener("animationend", ()=>{document.querySelector(".main-accept__button").classList.remove("animateBuy")});
 }
-// if (document.querySelector(".balance-button")) {
-//     document.querySelectorAll(".balance-button").forEach((el)=>{
-//         el.addEventListener("click", ()=> {
-//             if (el.classList.contains("animateBuy")) {
-//                 el.classList.remove("animateBuy");
-//                 setTimeout(()=>{el.classList.add("animateBuy")}, 5)
-//             } else {
-//                 el.classList.add("animateBuy");
-//             }
-//         }) 
-//     })
-//     document.querySelectorAll(".balance-button").forEach((el)=>{
-//         el.addEventListener("animationend", ()=>{el.classList.remove("animateBuy")}); 
-//     })
-// }
+if (document.querySelector(".balance-button")) {
+    document.querySelectorAll(".balance-button").forEach((el)=>{
+        el.addEventListener("click", ()=> {
+            if (el.classList.contains("animateBuy")) {
+                el.classList.remove("animateBuy");
+                setTimeout(()=>{el.classList.add("animateBuy")}, 5)
+            } else {
+                el.classList.add("animateBuy");
+            }
+        }) 
+    })
+    document.querySelectorAll(".balance-button").forEach((el)=>{
+        el.addEventListener("animationend", ()=>{el.classList.remove("animateBuy")}); 
+    })
+}
 
 if (document.querySelector(".account-card")) {
     document.querySelectorAll(".cards-section .account-card").forEach((el)=>{
@@ -377,7 +377,7 @@ if (document.querySelector(".account-card")) {
 }
 
 if (document.querySelector(".method-bg")) {
-    document.querySelectorAll(".method-bg").forEach((el)=>{
+    document.querySelectorAll(".deposit__methods .method-bg").forEach((el)=>{
         el.addEventListener("click", ()=>{
             document.querySelector(".method-bg.active").classList.remove("active");
             el.classList.add("active");
