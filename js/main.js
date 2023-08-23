@@ -290,6 +290,14 @@ if (document.querySelector(".main-accept__button")) {
             self.classList.add("animateBuy");
         }
     }) 
+    document.querySelector(".main-accept__button").addEventListener("mouseover", (elem)=> {
+        let self = elem.currentTarget;
+        if (self.classList.contains("animateBuy")) {
+            return;
+        } 
+            self.classList.add("animateBuy");
+        
+    }) 
     document.querySelector(".main-accept__button").addEventListener("animationend", ()=>{document.querySelector(".main-accept__button").classList.remove("animateBuy")});
 }
 // if (document.querySelector(".balance-button")) {

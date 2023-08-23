@@ -148,6 +148,8 @@ body.noscroll {
     background-repeat: no-repeat;
     background-size: 100%;
     height: 145px;
+    width: 100%;
+    margin: 0 auto;
     padding: 0 110px 80px 110px;
 }
 
@@ -393,6 +395,7 @@ body.noscroll {
 
 .main {
     width: 100%;
+    /* position: relative; */
     -webkit-box-flex: 1;
         -ms-flex: 1 1 auto;
             flex: 1 1 auto;
@@ -892,38 +895,29 @@ body.noscroll {
 .card-filter__list.active:hover::after {
     content: "";
     display: block;
-    width: 20px;
-    height: 100px;
+    width: 45px;
+    height: 200px;
     margin-right: -30px;
     background: #fff;
-    background: -webkit-gradient(
-        linear,
-        left top, left bottom,
-        from(rgba(255, 255, 255, 0.5)),
-        color-stop(50%, rgba(255, 255, 255, 1)),
-        to(rgba(255, 255, 255, 0.5))
-    );
+    transform: skew(-13deg);
     background: -o-linear-gradient(
-        top,
-        rgba(255, 255, 255, 0.5) 0%,
-        rgba(255, 255, 255, 1) 50%,
-        rgba(255, 255, 255, 0.5) 100%
+        right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0) 100%
     );
     background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.5) 0%,
-        rgba(255, 255, 255, 1) 50%,
-        rgba(255, 255, 255, 0.5) 100%
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0) 100%
     );
     right: -40px;
-    top: -17px;
+    top: -100px;
     z-index: 1;
-    -webkit-transform: rotate(30deg);
-        -ms-transform: rotate(30deg);
-            transform: rotate(30deg);
     position: absolute;
-    -webkit-animation: movingFlare 3s ease-in-out 0.05s infinite;
-            animation: movingFlare 3s ease-in-out 0.05s infinite;
+    -webkit-animation: movingFlare 4s ease-in-out 0.05s infinite;
+            animation: movingFlare 4s ease-in-out 0.05s infinite;
 }
 .footer {
     height: 128px;
@@ -1999,74 +1993,54 @@ body.noscroll {
 .LightUp:after {
     content: "";
     display: block;
-    width:20px;
+    width: 60px;
     height: 200px;
     margin-right: -30px;
     background: #fff;
-    background: -webkit-gradient(
-        linear,
-        left top, left bottom,
-        from(rgba(255, 255, 255, 0.5)),
-        color-stop(50%, rgba(255, 255, 255, 1)),
-        to(rgba(255, 255, 255, 0.5))
-    );
     background: -o-linear-gradient(
-        top,
-        rgba(255, 255, 255, 0.5) 0%,
-        rgba(255, 255, 255, 1) 50%,
-        rgba(255, 255, 255, 0.5) 100%
+        right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0) 100%
     );
     background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.5) 0%,
-        rgba(255, 255, 255, 1) 50%,
-        rgba(255, 255, 255, 0.5) 100%
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0) 100%
     );
     right: -40px;
     top: -100px;
     z-index: 1;
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
     position: absolute;
-    -webkit-animation: movingFlare 3s ease-in-out 0.05s infinite;
-            animation: movingFlare 3s ease-in-out 0.05s infinite;
+    -webkit-animation: movingFlare 4s ease-in-out 0.05s infinite;
+            animation: movingFlare 4s ease-in-out 0.05s infinite;
 }
 .LightClick:after {
     content: "";
     display: block;
-    width:20px;
+    width: 60px;
     height: 200px;
     margin-right: -30px;
     background: #fff;
-    background: -webkit-gradient(
-        linear,
-        left top, left bottom,
-        from(rgba(255, 255, 255, 0.5)),
-        color-stop(50%, rgba(255, 255, 255, 1)),
-        to(rgba(255, 255, 255, 0.5))
-    );
     background: -o-linear-gradient(
-        top,
-        rgba(255, 255, 255, 0.5) 0%,
-        rgba(255, 255, 255, 1) 50%,
-        rgba(255, 255, 255, 0.5) 100%
+        right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0) 100%
     );
     background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0.5) 0%,
-        rgba(255, 255, 255, 1) 50%,
-        rgba(255, 255, 255, 0.5) 100%
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0) 100%
     );
     right: -40px;
     top: -100px;
     z-index: 1;
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
     position: absolute;
-    -webkit-animation: movingFlare 3s ease-in-out 0.05s;
-            animation: movingFlare 3s ease-in-out 0.05s;
+    -webkit-animation: movingFlare 4s ease-in-out 0.05s infinite;
+            animation: movingFlare 4s ease-in-out 0.05s infinite;
 }
 
 /*reviews.html*/
@@ -2101,6 +2075,7 @@ body.noscroll {
 
 .review__container {
     width: 100%;
+    margin-bottom: 200px;
     padding: 0 20px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2298,7 +2273,8 @@ body.noscroll {
     width: 100%;
     height: 155px;
     background-color: rgba(0, 0, 0, 0);
-    position: relative;
+    position: absolute;
+    bottom: 128px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -3088,6 +3064,17 @@ body.noscroll {
     font-size: 25px;
      text-align: center;
      gap: 15px;
+     max-height: 750px;
+}
+.modal-container.modal__balance .overflow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 700px;
+    position: relative;
 }
 .modal-container.modal__balance .modal-close {
     display: block;
@@ -3172,13 +3159,13 @@ body.noscroll {
 }
 .ruble {
     position: absolute;
-    top: 74px;
-    left: 98px;
+    top: 67px;
+    left: 100px;
     z-index: 5;
 }
 .input-deposit {
     width: 300px;
-    height: 58px;
+    min-height: 58px;
     font-family: var(--font-play-bold);
     font-size: 20px;
     color: #FFFFFF;
@@ -3219,7 +3206,7 @@ body.noscroll {
 }
 .input-balance-text {
     width: 375px;
-    height: 63px;
+    min-height: 63px;
     font-family: var(--font-play-bold);
     font-size: 20px;
     color: #FFFFFF;
@@ -3265,7 +3252,7 @@ body.noscroll {
 }
 .balance-button {
     width: 394px;
-    height: 48px;
+    min-height: 48px;
     background-image: url(../images/modal-balance-button.svg);
     background-color: transparent;
     background-repeat: no-repeat;
@@ -4548,6 +4535,9 @@ body.noscroll {
     .footer {
         height: 650px;
     }
+    .review__link-bg {
+        bottom: 650px;
+    }
     .footer__border-gradient {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -4703,6 +4693,14 @@ body.noscroll {
         background-image: url(../images/wrapper-bg.png);
         background-size: 100%;
     }
+    .modal-container.modal__balance {
+        max-height: 700px;
+    }
+    .modal-container.modal__balance .overflow {
+        overflow-y: scroll;
+        max-height: 650px;
+        max-width: 375px;
+    }
     .cards-section .account-card {
         z-index: 1;
         transition: none;
@@ -4827,8 +4825,8 @@ body.noscroll {
         margin-top: 32px;
     }
     .ruble {
-        top: 60px;
-        left: 82px;
+        top: 55px;
+        left: 104px;
     }
     .none-balance-header {
         font-size: 20px;
@@ -5134,6 +5132,7 @@ body.noscroll {
     .review__container {
         padding: 90px 20px 48px 20px;
         gap: 50px;
+        margin-bottom: 0;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
@@ -5463,7 +5462,7 @@ body.noscroll {
       }
       .balance-button {
         width: 301px;
-        height: 37px;
+        min-height: 37px;
         background-size: 301px 37px;
         margin-top: 10px;
         font-size: 17px;
