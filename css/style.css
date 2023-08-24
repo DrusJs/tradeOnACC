@@ -4059,8 +4059,8 @@ body.noscroll {
 /*media*/
 @media screen and (min-width: 2765px) {
     .header.bg {
-        padding: 0 710px 80px 710px;
-        max-width: 3900px;
+        padding: 0 910px 80px 910px;
+        max-width: 4300px;
     }   
 }
 @media screen and (min-width: 1920px) {
