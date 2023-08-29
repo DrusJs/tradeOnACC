@@ -223,16 +223,16 @@ if (document.getElementsByClassName('number-ticker')){
         var currentValue = parseInt(counter.getAttribute('data-value')) || 0;
         var digits = [];
         accountTotal.previousElementSibling.addEventListener("click", ()=>{
-            accountTotal.innerHTML = +accountTotal.innerHTML<=0?0:+accountTotal.innerHTML-50;
-            let multy = +accountTotal.innerHTML;
+            accountTotal.value = +accountTotal.value-50<=0?0:+accountTotal.value-50;
+            let multy = +accountTotal.value;
             setValue(multy*10);
-            animateDiscount(+accountTotal.innerHTML);
+            animateDiscount(+accountTotal.value);
         });
         accountTotal.nextElementSibling.addEventListener("click", ()=>{
-            accountTotal.innerHTML = +accountTotal.innerHTML==950?950:+accountTotal.innerHTML+50;
-            let multy = +accountTotal.innerHTML;
+            accountTotal.value = +accountTotal.value+50>=950?950:+accountTotal.value+50;
+            let multy = +accountTotal.value;
             setValue(multy*10);
-            animateDiscount(+accountTotal.innerHTML);
+            animateDiscount(+accountTotal.value);
         });
         generateDigits(currentValue.toString().length);
         setValue(1500);
@@ -452,4 +452,11 @@ if (document.querySelector(".cards-filter-mobile-bg")){
                 document.querySelector(".cards-filter-mobile-bg").classList.remove("active");
         }
     }
+}
+
+if (document.querySelector(".store-section__example")) {
+    document.querySelector(".store-section__example").addEventListener("click", (elem)=> {
+        elem.currentTarget.classList.add("active");
+        elem.currentTarget.innerHTML = "";
+    })
 }
