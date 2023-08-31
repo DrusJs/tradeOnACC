@@ -154,6 +154,41 @@ body.noscroll {
     padding: 0 110px 80px 110px;
 }
 
+.notice-bg {
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    width: 332px;
+    height: 83px;
+    z-index: 570;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-play-bold);
+    font-size: 25px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 300ms ease-in-out;
+}
+.notice-bg.active {
+    opacity: 1;
+    visibility: visible;
+}
+.notice-bg svg {
+    position: absolute;
+    -webkit-filter: drop-shadow(0px 0px 5px #01C9FF);
+    filter: drop-shadow(0px 0px 5px #01C9FF);
+    z-index: -1;
+}
+.notice-bg.accept path {
+    fill: #004327;
+}
+.notice-bg.message path {
+    fill: #0E2861;
+}
+.notice-bg.error path {
+    fill: #430024;
+}
 .burger-menu {
     display: none;
     -webkit-box-pack: justify;
@@ -615,6 +650,13 @@ body.noscroll {
     -webkit-filter: drop-shadow(0px 0px 5px rgba(255,135,0,0.7));
             filter: drop-shadow(0px 0px 5px rgba(255,135,0,0.7));;
 }
+.popular .account-card:hover .account-card__icon svg.sale {
+    -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+            transform: scale(1.3);
+    -webkit-filter: drop-shadow(0px 0px 5px #01C9FF);
+            filter: drop-shadow(0px 0px 5px #01C9FF);
+}
 .account-card.small-gap {
     gap: 1px;
 }
@@ -860,6 +902,7 @@ body.noscroll {
             justify-content: flex-start;
     gap: 12px;
     overflow-x: scroll;
+    overflow-y: hidden;
 }
 .card-filter__list {
     font-family: var(--font-play-bold);
@@ -2623,22 +2666,31 @@ body.noscroll {
     scroll-padding-top: 10px;
     scroll-padding-bottom: 30px;
 }
+.overflow {
+    scrollbar-width: thin;
+    scrollbar-color: white transparent;
+    margin: 0 5px;
+}
+
 .promo-table .table-body::-webkit-scrollbar,
 .history-table .table-body::-webkit-scrollbar,
-.accordion-body::-webkit-scrollbar{
+.accordion-body::-webkit-scrollbar,
+.overflow::-webkit-scrollbar {
     width: 6px;
     height: 6px;
     padding: 10px;
 }
 .promo-table .table-body::-webkit-scrollbar-track,
 .history-table .table-body::-webkit-scrollbar-track,
-.accordion-body::-webkit-scrollbar-track{
+.accordion-body::-webkit-scrollbar-track,
+.overflow::-webkit-scrollbar-track {
     background-color: transparent;
     padding: 10px;
 }
 .promo-table .table-body::-webkit-scrollbar-thumb,
 .history-table .table-body::-webkit-scrollbar-thumb,
-.accordion-body::-webkit-scrollbar-thumb{
+.accordion-body::-webkit-scrollbar-thumb,
+.overflow::-webkit-scrollbar-thumb {
     background-color: #FFFFFF;
     border-radius: 5px;
     border: 0;
@@ -3260,14 +3312,12 @@ body.noscroll {
     opacity: 0;
 }
 .balance-button {
-    width: 394px;
-    min-height: 48px;
-    background-image: url(../images/modal-balance-button.svg);
+    width: 416px;
+    min-height: 75px;
+    background-image: url(../images/modal-balance-button.png);
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: center;
-    -webkit-filter: drop-shadow(0px 0px 8px #01C9FF);
-            filter: drop-shadow(0px 0px 8px #01C9FF);
     font-family: var(--font-play-bold);
     font-size: 20px;
     padding: 7px;
@@ -3284,10 +3334,10 @@ body.noscroll {
 .none-balance-button::before{
     content: "";
     position: absolute;
-    top: 5px;
-    right: 5px;
-    bottom: 5px;
-    left: 5px;
+    top: 8px;
+    right: 20px;
+    bottom: 8px;
+    left: 20px;
     z-index: -1;
     background: -webkit-gradient(linear, left top, right top, from(#03a9f4), color-stop(#f441a5), color-stop(#45F5B6), to(#03a9f4));
     background: -o-linear-gradient(left, #03a9f4, #f441a5, #45F5B6, #03a9f4);
@@ -3323,37 +3373,37 @@ body.noscroll {
 
 @keyframes balance-top {
     0% {
-      top: -2px;
+      top: 10px;
       left: 50%;
     }
     45% {                
-      top: -2px;
+      top: 10px;
       left: 97%;
     }
     55% {
-      top: 43px;
+      top: 53px;
       left: 97%;
     }
     100% {
-      top: 43px;
+      top: 53px;
       left: 50%;
     }
   }
   @keyframes balance-bottom {
     0% {
-      top: 0px;
+      top: 10px;
       left: 50%; 
     }
     45% {          
-      top: 0px;
+      top: 10px;
       left: -5px;
     }
     55%{          
-      top: 43px;
+      top: 53px;
       left: -5px;
     }
     100% {               
-      top: 43px;
+      top: 53px;
       left: 50%;
     }
   }
@@ -3398,9 +3448,9 @@ body.noscroll {
 .balance-button:hover,
 .none-balance-button:hover,
 .main-accept__button:hover {
-    -webkit-transform: scale(1.07);
-        -ms-transform: scale(1.07);
-            transform: scale(1.07);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 }
 
 .balance-button:hover::before,
@@ -4059,7 +4109,7 @@ body.noscroll {
 /*media*/
 @media screen and (min-width: 2765px) {
     .header.bg {
-        padding: 0 910px 80px 910px;
+        padding: 0 15% 80px;
         max-width: 4300px;
     }   
 }
@@ -4691,37 +4741,37 @@ body.noscroll {
     }
     @keyframes balance-top {
     0% {
-      top: -3px;
+      top: 10px;
       left: 50%;
     }
     45% {                
-      top: -3px;
+      top: 10px;
       left: 95%;
     }
     55% {
-      top: 31px;
+      top: 41px;
       left: 95%;
     }
     100% {
-      top: 31px;
+      top: 41px;
       left: 50%;
     }
   }
   @keyframes balance-bottom {
     0% {
-      top: -3px;
+      top: 10px;
       left: 50%; 
     }
     45% {          
-      top: -3px;
+      top: 10px;
       left: 0px;
     }
     55%{          
-      top: 31px;
+      top: 41px;
       left: 0px;
     }
     100% {               
-      top: 31px;
+      top: 41px;
       left: 50%;
     }
   }
@@ -5135,7 +5185,7 @@ body.noscroll {
         background-image: url(../images/redcard-mobile.png);
     }
     .account-card.none-bg {
-        background-image: url(../images/nonecard.png);
+        background-image: url(../images/nonecard-mobile.png);
     }
     .account-card.non-skew-cards {
         -webkit-transform: none;
@@ -5367,24 +5417,6 @@ body.noscroll {
         width: 295px;
         margin: 15px auto 20px auto;
       }
-      @-webkit-keyframes pulse-top {
-        0% {
-          top: 14px;
-          left: 285px;
-        }
-        15% {                
-          top: -6px;
-          left: 270px;
-        }
-        85% {
-          top: -6px;
-          left: 21px;
-        }
-        100% {
-          top: 14px;
-          left: 5px;
-        }
-      }
       @keyframes pulse-top {
         0% {
           top: 14px;
@@ -5399,32 +5431,6 @@ body.noscroll {
           left: 21px;
         }
         100% {
-          top: 14px;
-          left: 5px;
-        }
-      }
-      @-webkit-keyframes pulse-bottom {
-        0% {
-          top: 14px;
-          left: 285px; 
-        }
-        10% {          
-          top: 33px;
-          left: 295px;
-        }
-        15%{          
-          top: 33px;
-          left: 270px;
-        }
-        85% {                
-          top: 33px;
-          left: 23px;
-        }
-        90% {
-          top: 33px;
-          left: -4px;
-        }
-        100% {               
           top: 14px;
           left: 5px;
         }
@@ -5493,11 +5499,14 @@ body.noscroll {
         padding: 0 30px;
       }
       .balance-button {
-        width: 301px;
-        min-height: 37px;
+        width: 305px;
+        min-height: 65px;
         background-size: 301px 37px;
+        padding: 0;
         margin-top: 10px;
         font-size: 17px;
+        background-image: url(../images/modal-balance-button-mobile.png);
+        background-size: contain;
     }
     .modal-container.modal__balance-cript {
         width: 350px;

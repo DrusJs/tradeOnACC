@@ -460,3 +460,12 @@ if (document.querySelector(".store-section__example")) {
         elem.currentTarget.innerHTML = "";
     })
 }
+
+document.querySelector(".modal-button").addEventListener("click", ()=>{
+    document.querySelector(".notice-bg").classList.add("active");
+    hideNotice();
+})
+
+function hideNotice() {
+    setTimeout(()=>{document.querySelector(".notice-bg").classList.remove("active");}, 3000);    
+}
