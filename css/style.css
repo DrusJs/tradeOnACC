@@ -4739,6 +4739,9 @@ body.noscroll {
         background-image: url(../images/wrapper-bg.png);
         background-size: 100%;
     }
+    .notice-bg.active {
+        display: none;
+    }
     @keyframes balance-top {
     0% {
       top: 10px;
