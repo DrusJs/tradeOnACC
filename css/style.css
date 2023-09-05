@@ -4960,7 +4960,7 @@ body.noscroll {
         padding: 0;
     }
     .store-section__block-svg {
-        width: 400px;
+        width: 360px;
         padding: 13px 10px 0 25px;
         margin-bottom: 50px;
     }
@@ -4969,8 +4969,8 @@ body.noscroll {
     }
     .block-svg__background-mob {
         display: block;        
-        width: 406px;
-        height: 300px;
+        width: 360px;
+        height: 285px;
     }
     .store-section__shadow-radian {
         display: none;
