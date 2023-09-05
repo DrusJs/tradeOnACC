@@ -156,7 +156,7 @@ body.noscroll {
 
 .notice-bg {
     position: fixed;
-    bottom: 50px;
+    bottom: 25px;
     right: 40px;
     width: 332px;
     height: 83px;
@@ -500,8 +500,8 @@ body.noscroll {
     content: "";
     position: absolute;
     top: 0;
-    left: -0.5px;
-    width: calc(100% + 1px);
+    left: -1px;
+    width: calc(100% + 2px);
     height: 101%;
     background-image: var(--linear-gradient-blur);
 }
@@ -794,8 +794,8 @@ body.noscroll {
     content: "";
     position: absolute;
     top: 0;
-    left: -0.5px;
-    width: calc(100% + 1px);
+    left: -1px;
+    width: calc(100% + 2px);
     height: 101%;
     background-image: var(--linear-gradient-blur);
     z-index: -1;
@@ -882,9 +882,9 @@ body.noscroll {
     content: "";
     position: absolute;
     top: 0;
-    left: -0.5px;
-    width: calc(100% + 1px);
-    height: 101%;
+    left: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 1px);
     background-image: var(--linear-gradient-blur);
 }
 .cards-section {
@@ -2108,8 +2108,8 @@ body.noscroll {
     content: "";
     position: absolute;
     top: 0;
-    left: -0.5px;
-    width: calc(100% + 1px);
+    left: -1px;
+    width: calc(100% + 2px);
     height: 101%;
     background-image: var(--linear-gradient-blur-reverse);
 }
@@ -2348,8 +2348,8 @@ body.noscroll {
     content: "";
     position: absolute;
     top: 0;
-    left: -0.5px;
-    width: calc(100% + 1px);
+    left: -1px;
+    width: calc(100% + 2px);
     height: 101%;
     background-image: var(--linear-gradient-blur-dark);
 }
@@ -2590,7 +2590,7 @@ body.noscroll {
         -ms-flex-pack: justify;
             justify-content: space-between;
     height: 55px;
-    padding: 0 40px;
+    padding: 0 15px 0 40px;
 }
 .history-table .row .cell:last-child{
     display: -webkit-box;
@@ -2659,12 +2659,13 @@ body.noscroll {
 }
 .history-table .table-body,
 .promo-table .table-body {
-    max-height: 273px;
+    max-height: 262px;
     overflow-y: scroll;
     scrollbar-width: auto;
     scrollbar-color: white transparent;
     scroll-padding-top: 10px;
     scroll-padding-bottom: 30px;
+    margin: 10px 20px 15px 0;
 }
 .overflow {
     scrollbar-width: thin;
@@ -3486,12 +3487,22 @@ body.noscroll {
     top: 0;
     width: 100%;
     max-width: 539px;
+    height: 49px;
+    background-image: url(../images/modal-none-balance-header.svg);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 .none-balance-bg {
     position: absolute;
     bottom: 2px;
     width: 100%;
+    height: 113px;
     max-width: 756px;
+    background-image: url(../images/modal-none-balance.svg);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 .modal__none-balance .modal-close {
     position: relative;
@@ -4901,6 +4912,7 @@ body.noscroll {
     .none-balance-header-bg {
         max-width: 276px;
         height: 36px;
+        background-image: url(../images/modal-none-balance-header-mobile.svg);
     }
     .none-balance-button {
         font-size: 17px;
@@ -4917,7 +4929,9 @@ body.noscroll {
         font-size: 20px;
     }
     .none-balance-bg {
-        max-width: 364px;
+        max-width: 360px;
+        height: 117px;
+        background-image: url(../images/modal-none-balance-mobile.svg);
     }
     .balance-button:hover,
     .none-balance-button:hover,
