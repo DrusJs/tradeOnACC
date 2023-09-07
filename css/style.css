@@ -3126,7 +3126,7 @@ body.noscroll {
     width: 468px;
     height: 850px;
     padding: 10px 0 0 0;
-    margin-top: 20px;
+    margin-top: 50px;
     scrollbar-width: auto;
     scrollbar-color: white transparent;
     font-family: var(--font-play-bold);
