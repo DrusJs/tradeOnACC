@@ -894,7 +894,7 @@ body.noscroll {
 }
 .cards-section {
     padding: 0 50px;
-    height: 275px;
+    height: auto;
     background-color: var(--color-background-container);
     display: -webkit-box;
     display: -ms-flexbox;
@@ -906,9 +906,7 @@ body.noscroll {
         -ms-flex-pack: start;
             justify-content: flex-start;
     gap: 12px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    z-index: 1;
+    flex-wrap: wrap;
     position: relative;
 }
 .card-filter__list {
