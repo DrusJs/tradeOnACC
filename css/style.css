@@ -890,7 +890,7 @@ body.noscroll {
     background-image: var(--linear-gradient-blur);
 }
 .cards-section {
-    padding: 30px 50px;
+    padding: 30px 40px;
     height: auto;
     background-color: var(--color-background-container);
     display: -webkit-box;
