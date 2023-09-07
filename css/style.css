@@ -906,7 +906,7 @@ body.noscroll {
         -ms-flex-pack: start;
             justify-content: flex-start;
     gap: 12px;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     z-index: 1;
     position: relative;
