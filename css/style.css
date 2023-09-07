@@ -908,6 +908,8 @@ body.noscroll {
     gap: 12px;
     overflow-x: scroll;
     overflow-y: hidden;
+    z-index: 1;
+    position: relative;
 }
 .card-filter__list {
     font-family: var(--font-play-bold);
@@ -2412,7 +2414,7 @@ body.noscroll {
     left: 0;
     right: 30px;
     width: 100%;
-    height: 797px;
+    min-height: 797px;
 }
 
 .profile-title {
@@ -2678,11 +2680,15 @@ body.noscroll {
     scrollbar-color: white transparent;
     margin: 0 5px;
 }
-
+.cards-section {    
+    scrollbar-width: auto;
+    scrollbar-color: white transparent;
+}
 .promo-table .table-body::-webkit-scrollbar,
 .history-table .table-body::-webkit-scrollbar,
 .accordion-body::-webkit-scrollbar,
-.overflow::-webkit-scrollbar {
+.overflow::-webkit-scrollbar,
+.cards-section::-webkit-scrollbar {
     width: 6px;
     height: 6px;
     padding: 10px;
@@ -2690,14 +2696,16 @@ body.noscroll {
 .promo-table .table-body::-webkit-scrollbar-track,
 .history-table .table-body::-webkit-scrollbar-track,
 .accordion-body::-webkit-scrollbar-track,
-.overflow::-webkit-scrollbar-track {
+.overflow::-webkit-scrollbar-track,
+.cards-section::-webkit-scrollbar-track {
     background-color: transparent;
     padding: 10px;
 }
 .promo-table .table-body::-webkit-scrollbar-thumb,
 .history-table .table-body::-webkit-scrollbar-thumb,
 .accordion-body::-webkit-scrollbar-thumb,
-.overflow::-webkit-scrollbar-thumb {
+.overflow::-webkit-scrollbar-thumb,
+.cards-section::-webkit-scrollbar-thumb {
     background-color: #FFFFFF;
     border-radius: 5px;
     border: 0;
@@ -4147,7 +4155,43 @@ body.noscroll {
                 transform: scale(0.8);        
         margin: 0px 0 80px 0;
     }
-    
+    .profile-container__bg {
+        display: none;
+    }
+    .gradient-border.bottom {
+        bottom: 0;
+        left: 0;
+      }
+    .profile-container {
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#040C20), to(#061536));
+        background-image: -o-linear-gradient(top, #040C20 0%, #061536 100%);
+        background-image: linear-gradient(180deg, #040C20 0%, #061536 100%);
+        -webkit-box-shadow: 0px 0px 15px #01C9FF;
+        box-shadow: 0px 0px 15px #01C9FF;
+      }
+    .gradient-border.top {
+        top: 0;
+        left: 0;
+        -webkit-box-shadow: 0px 3px 0px #040C20;
+        box-shadow: 0px 3px 0px #040C20;
+      }
+      .gradient-border {
+        height: 4px;
+        width: 100%;
+        background-image: var(--linear-gradient-main);
+        position: absolute;
+      }
+    .profile-title {
+        background-image: url(../images/review-users-mobile.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 370px;
+        text-align: center;
+        padding: 20px 0 10px 0;
+        position: absolute;
+        top: -56px;
+        z-index: -1;
+      }
 }
 @media screen and (max-width: 1450px) {
     .profile-info .profile-info__content:nth-child(2) {
@@ -4189,9 +4233,6 @@ body.noscroll {
     }
     .footer__border-gradient {
         padding: 35px 50px 0 50px;
-    }
-    .profile-container__bg {
-        display: none;
     }
     .referal-accordion, .referal-accordion.active {
         position: relative;
