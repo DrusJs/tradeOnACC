@@ -877,9 +877,6 @@ body.noscroll {
 .cards-section-bg {
     padding: 3px;
     background-image: var(--linear-gradient-main);
-    -webkit-transform: var(--skew-cards-block);
-        -ms-transform: var(--skew-cards-block);
-            transform: var(--skew-cards-block);
     position: relative;
     width: 95%;
 }
@@ -893,7 +890,7 @@ body.noscroll {
     background-image: var(--linear-gradient-blur);
 }
 .cards-section {
-    padding: 0 50px;
+    padding: 30px 50px;
     height: auto;
     background-color: var(--color-background-container);
     display: -webkit-box;
